@@ -1,0 +1,128 @@
+/*
+font-family: 'Gentium Plus', serif;
+font-family: 'Roboto', sans-serif;
+*/
+ body {
+ font-size: 1em;
+ color: black;
+ margin: 0 auto;
+ width: 80%;
+ font-family: 'Roboto', sans-serif; 
+ line-height: 2;
+ 
+}
+
+.main-content {
+ background-image: linear-gradient( #FAF7EE 10%,#afdedc 50%,#f0f7ee 80%);
+    
+}
+h1{font-size: 2rem; color:#9B9E62}
+h2 {font-size: 3rem;}
+h4{font-size: 2rem;}
+h3,h4 {text-align: center;}
+h2, h1 {
+    text-align: center;
+    font-family: 'Gentium Plus', serif;
+    border-bottom: 3px solid #003399;
+}
+ 
+.purpose {
+    margin: 15px;
+    font-weight: bolder;
+}
+
+nav, footer {
+    background-color: #1b4de4;
+    border-radius: 10px;
+}
+
+nav a, footer, footer a {
+    color: white;
+}
+
+nav a:hover {
+    background-color: #039;
+    color: white;
+}
+
+nav a:active {
+    background-color:#003399;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav > ul > li > a {
+    display: block;
+    text-align: center;
+    padding: 0.70rem;
+}
+
+.domain  {
+    text-align: center;
+    color:#003399;
+    font-size: 1.3rem;
+}
+
+img {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px 0 10px;
+    color: #f0f7ee;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer a:active {
+    color: #1b4de4;
+}
+
+
+table{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bolder;
+    padding: 10px;
+    
+}
+th {background-color: #999;}
+td { height: 4em;}
+th,td {
+    border: 1px solid #003399;
+}
+
+.primary { background-color: #afdedc;}
+.secondary {background-color: #1b4de4;}
+.accent1 {background-color: #faf7ee;}
+.accent2 {background-color: #9b9e62;}
+
+
+.font-gentium {
+    margin: -50px 10px 10px 10px;
+    
+    font-family: 'Gentium Plus', serif;
+    font-size: 2rem;
+}
+
+.font-roboto{
+    margin: -50px 10px 10px 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
