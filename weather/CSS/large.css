@@ -1,0 +1,11 @@
+@media only screen and (min-width: 60em) {
+
+    .main-content {
+        background-color: #999;
+    }
+    footer {
+        margin: 0 auto;
+        width: 90%;
+        
+    }
+}
