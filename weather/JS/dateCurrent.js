@@ -1,8 +1,13 @@
-let olastModif = document.lastModified;
-let nLastModif = Date.parse(document.lastModified);
-
-let dayN
-
-console.log(olastModif)
-
-document.querySelector("#currentDate").innerHTML = ' ' + olastModif;
+const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+ 
+let myDate = new Date()
+ 
+let diaName = weekday[myDate.getDay()];
+let dia2 = myDate.getDate();
+let monthName = month[myDate.getMonth()];
+let year = myDate.getFullYear();
+let fullDate = ' '+diaName +', '+dia2+' '+monthName+ ' '+year;
+console.log(fullDate)
+document.querySelector("#currentDate").textContent = fullDate; 
+ 
