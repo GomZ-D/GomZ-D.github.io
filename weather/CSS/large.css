@@ -5,7 +5,43 @@
     }
     footer {
         margin: 0 auto;
-        width: 90%;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    main {
+        width: 80%;
+    }
+    section {
+        margin: 30px;
+    }
+
+    .week-weather { width: 60%; margin: 0 auto;}
+    .contact-info {
+        width: 100%;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        background-color: #ddd;
+    }
+
+    header {
+         justify-content: center; 
+         align-items: center;
+    }
+    .logos {
+        width: 150px;
+        height: 150px;
         
+        padding: 0;
+        
+    }
+    .logos img {
+        width:100% ;
+        margin-top: 10px;
+        
+
+    }
+    .heading h1{
+        align-items: center;
     }
 }
