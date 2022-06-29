@@ -21,27 +21,27 @@
         width: 100%;
         margin: 0 auto;
         border: 1px solid #ddd;
-        background-color: #ddd;
+        background-color: #eee;
     }
 
     header {
-         justify-content: center; 
+         justify-content: flex-start; 
          align-items: center;
+          
     }
     .logos {
         width: 150px;
-        height: 150px;
-        
-        padding: 0;
-        
+        ;
+     
     }
     .logos img {
         width:100% ;
-        margin-top: 10px;
+        
         
 
     }
     .heading h1{
         align-items: center;
+        
     }
 }

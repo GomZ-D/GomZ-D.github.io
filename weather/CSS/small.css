@@ -120,6 +120,9 @@ nav {
     content: "🍔 ";
 } */
 
+.current {
+    background-color: #9b9e62;
+}
 .navigation a:hover {
     color: #1b4de4;
     background-color: white;
@@ -140,8 +143,6 @@ header {
     
     padding: 20px ;
     gap: 10px;
-    
-
 }
 .logos {width: 100px; margin: 0 0 0 2%;}
 header div img {
@@ -226,3 +227,12 @@ footer {
 /* font-family: 'Gentium Plus', serif;
 font-family: 'Roboto', sans-serif; */
 
+#banner {
+   
+    border: 1px solid #9b9e62;
+    background-color: #c29148;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
