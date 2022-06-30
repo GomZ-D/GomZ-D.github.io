@@ -44,4 +44,13 @@
         align-items: center;
         
     }
+
+     /*------------GALLERY PAGE---------*/
+    
+     .gallery-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .gallery-header{
+        font-size: 3rem;
+      }
 }
