@@ -11,7 +11,7 @@
         grid-template-columns:  1fr 1fr;
         grid-template-rows: 200px 1fr;
     }
-    .banner-img{ grid-column:1/-1;
+    .banner-img, picture{ grid-column:1/-1;
                 grid-row:1/-1}
     .banner-Table{
         width: 250px;

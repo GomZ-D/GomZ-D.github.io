@@ -41,8 +41,12 @@
                <h2 class="main-header">Preston Idaho</h2>   
 
                 <section class="content-banner">
-                    <img class="banner-img" src="images/banner-hero-large.jpg" alt="mainBanner">
-                    
+                    <picture>
+                        <source media="(max-width: 520px)" srcset="images/rszHero500.jpg">
+                        <source media="(max-width: 960px)" srcset="images/rszHero800.jpg">
+                        <source media="(min-width: 961px)" srcset="images/rszHero1200.jpg">
+                        <img class="banner-img" src="images/banner-hero-large.jpg" alt="mainBanner">
+                    </picture>
                     <table class="banner-Table">
                         <caption>Weather Summary</caption>
                          <tr>
@@ -51,11 +55,11 @@
                          </tr>
                          <tr>
                             <th>High:</th> 
-                            <td>76 *F</td>
+                            <td><span class="temper">76</span>*F</td>
                          </tr>
                          <tr>
                             <th>Wind Chill:</th>
-                            <td>70 *F</td>
+                            <td><span class="windch"></span>*F</td>
                          </tr>
                          <tr>
                             <th>Humidity:</th>
@@ -63,7 +67,7 @@
                          </tr>
                          <tr>
                             <th>Wind Speed:</th>
-                            <td>5mph</td>
+                            <td><span class="wspeed">5</span>mph</td>
                          </tr>
                     </table>
                 </section>
@@ -129,8 +133,7 @@
             <script src="jS/dateCurrent.js"></script>
             <script src="JS/respnav.js"></script>
             <script src="JS/banner.js"></script>
-            
-            
+            <script src="JS/windchill.js"></script>
        </div>
     </body>
 </html>
