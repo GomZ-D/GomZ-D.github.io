@@ -1,0 +1,55 @@
+
+main {
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    box-shadow: 0 0 20px #333;
+}
+
+section {
+   border: 2px solid rgb(87, 88, 120);
+   background-color: rgb(138, 140, 201);
+   text-align: center;
+   padding: 0 2% 0 2%;
+}
+
+img {
+    width: 50%;
+    margin: 1rem auto;
+    box-shadow: 0 0 10px 5px #333;
+}
+
+p {
+    margin: 0;
+}
+h2,h1 {
+     
+    color: rgb(85, 40, 156);
+    text-shadow: 2px 2px 8px rgb(109, 76, 162);
+}
+
+h1 {
+    text-align: center;
+    font-style: italic;
+}
+
+ 
+@media only screen and (min-width: 32.5em) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 60em) {
+    .cards {
+        grid-template-columns: repeat(4,1fr);
+    }
+}
