@@ -50,7 +50,13 @@
      .gallery-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
-    .gallery-header{
+    .gallery-header, .stormheader{
         font-size: 3rem;
       }
+
+    /*-------------THANKS PAGE--------*/
+    .thanks {
+        margin: 1rem auto;
+        max-width: 70%;
+    }
 }

@@ -257,7 +257,118 @@ img[data-src]{
     filter: blur(0.2em);
 }
 
-.gallery-header{
+.gallery-header, .stormheader{
     font-size:1.4rem;
     text-align: center;
   }
+
+
+/*-------------FORM STORMcENTER--------*/
+
+ 
+form fieldset {
+    margin: 2rem 2rem;
+    border: 1px solid #9b9e62;
+    border-radius: 10px;
+    padding: .5rem 2%;
+}
+
+form legend {
+    color: #1b4de4;
+    margin: 0 1rem;
+    padding: 0 .5rem;
+}
+
+form label.top, label.sbs {
+    display: block;
+    padding-top: 1rem;
+    color: #333;
+    font-size: .8rem;
+}
+
+form label.top input, label.sbs input, select, textarea {
+    display: block;
+    font-size: 1rem;
+    border: 1px solid #9b9e62;
+    border-radius: 4px;
+    padding: .75rem;
+    color: #333;
+    width: 100%;
+    max-width: 20rem;
+    background-color: rgba(0,0,0,0.1);
+}
+
+div.sbs, .rad, .outp {
+    display: block;
+    font-size: .8rem;
+    color: #333;
+
+}
+form label.rad input {
+    margin: 0 .60rem 0 0;
+    font-size: 1rem;
+
+    
+}
+
+form input.submitBtn {
+    border: none;
+    background-color: #1b4de4;
+    color: white;
+    border-radius: 1rem;
+    padding: 0.75rem  1.5rem;
+    /* margin: 0 0 5rem 2%; */
+    margin: 0 2rem 4rem 2rem;
+    width: 20rem;
+    /* max-width: 20rem; */
+}
+
+form input.submitBtn:hover {
+    opacity: 0.8;
+  }
+
+.stormsev {
+    border: 1px solid #9b9e62;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-left: 2%;
+    width: 100%;
+    max-width: 25rem;
+    padding-bottom: 10px; 
+}
+
+/* textarea{
+    width: 100%;
+    max-width: 70%;
+} */
+
+form label.top input:required {
+    border-left: red solid 6px;
+}
+
+form label.top input:required:valid {
+    border-left: green solid 6px;
+
+}
+
+/*-------------THANK PAGE----------*/
+
+.thanks {
+    /* width: 80%; */
+    border: 1px solid #9b9e62;
+    border-bottom: 30px solid #9b9e62;
+    border-radius: 2px;
+    text-align: center;
+    margin: 2rem 2rem;
+    padding: 2rem 3rem 4rem 2rem;
+
+}
+
+.thanks h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+.thanks p {
+    margin-top: 3px;
+}

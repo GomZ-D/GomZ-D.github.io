@@ -139,7 +139,23 @@
     .gallery-container {
         grid-template-columns: 1fr 1fr;
     }
-    .gallery-header{
+    .gallery-header, .stormheader{
         font-size: 2rem;
+
       }
+
+    /*-------------FORM PAGE----------*/
+    form {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    form fieldset{
+        background-color: rgb(235, 235, 235);
+    }
+
+    /*---------------THANKS PAGE--------*/
+    .thanks {
+        background-color: white;
+    }
 }
