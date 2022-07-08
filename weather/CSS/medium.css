@@ -158,4 +158,58 @@
     .thanks {
         background-color: white;
     }
+
+    /*-----------HOME PAGE-------*/
+
+   section.towns {
+       /* max-width: 600px; */
+       /* margin: .5rem auto; */
+       display: flex;
+       flex-wrap: wrap;
+   }
+
+   article.data-town {
+       width: 100%;
+       margin: 25px auto;
+       display: flex;
+       flex-direction: row;
+       background-color: #9b9e62;
+       
+   }
+
+   article.data-town:nth-child(odd){
+       flex-direction: row-reverse;
+   } 
+
+   article.data-town img {
+    width: 40%;
+    margin: 2rem; 
+    border-radius: 0;
+     
+    }
+    article.data-town div  {
+     width: 50%;
+     padding:.75rem;
+     display: table-cell;
+     border-radius: 0;
+    
+    }
+
+    article.data-town div h2 {
+        font-size: 3rem;
+        margin-top: 3rem ;
+        
+    }
+    
+    article.data-town div h3 {
+        font-style: italic; 
+        margin-top: 3px;
+        margin-bottom: 2rem;
+    }
+    
+    article.data-town div p {
+        margin: 5px;
+        padding-bottom: 5px ;
+    }
+    
 }

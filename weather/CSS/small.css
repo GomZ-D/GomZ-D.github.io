@@ -372,3 +372,56 @@ form label.top input:required:valid {
 .thanks p {
     margin-top: 3px;
 }
+
+
+/*-------------HOME PAGE--------------*/
+
+h2.main-header {
+    font-size: 3rem;
+}
+main.main-town {
+    width: 100%; 
+    margin: 0 auto;} 
+ 
+article.data-town {
+    width: 70%;
+    margin: 20px auto;
+    /* border: 1px solid #ddd; */
+    /* padding: 1rem; */
+    box-shadow: 0 0 20px #333;
+    border-radius: 10px;
+
+} 
+
+article.data-town img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 0 0 10px 10px;
+    
+}
+article.data-town div {
+    text-align: center;
+    background-color: #9b9e62;
+    border-radius: 10px 10px 0 0;
+}
+
+article.data-town div h2 {
+    font-size: 2rem;
+    margin: 0 ;
+    
+}
+
+article.data-town div h3 {
+    font-style: italic; 
+    margin-top: 3px ;
+}
+
+article.data-town div p {
+    margin: 0;
+    padding-bottom: 5px ;
+}
+
+.colorin {
+    background-color: #ddd;
+}
