@@ -1,6 +1,7 @@
 let temp =  parseInt(document.querySelector('.temper').innerHTML);
 let speed =  parseInt(document.querySelector('.wspeed').innerHTML);
 
+ 
 let windSpeed;
 if (speed >= 5 && temp >= 50) {
 
@@ -12,4 +13,3 @@ else {
     windSpeed = 'N/A';
     document.querySelector('.windch').textContent=windSpeed;
 }
-
