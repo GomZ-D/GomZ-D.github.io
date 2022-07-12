@@ -1,0 +1,114 @@
+@media only screen and (min-width: 60em) {
+
+    .main-content {
+        background-color: #999;
+    }
+    footer {
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    main {
+        width: 80%;
+    }
+    section {
+        margin: 30px;
+    }
+
+    .week-weather { width: 60%; margin: 0 auto;}
+    .contact-info {
+        width: 100%;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        background-color: #eee;
+    }
+
+    header {
+         justify-content: flex-start; 
+         align-items: center;
+          
+    }
+    .logos {
+        width: 150px;
+        ;
+     
+    }
+    .logos img {
+        width:100% ;
+        
+        
+
+    }
+    .heading h1{
+        align-items: center;
+        
+    }
+
+     /*------------GALLERY PAGE---------*/
+    
+     .gallery-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .gallery-header, .stormheader{
+        font-size: 3rem;
+      }
+
+    /*-------------THANKS PAGE--------*/
+    .thanks {
+        margin: 1rem auto;
+        max-width: 70%;
+    }
+
+    /*-------------HOME PAGE---------*/
+
+    section.towns {
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-items: center;
+        margin: 30px 0
+        
+    }
+
+ 
+    article.data-town {
+        /* display: grid; */
+        display: block;
+        box-shadow: none;
+        border-radius: 10px;
+        width: 90%;
+        margin: 0;
+        }
+
+    article.data-town div {
+        margin: 0 auto;
+        border-radius: 10px 10px 0 0;
+        
+     }
+
+    article.data-town img {
+        display: block;
+        width: 100%;
+    
+        margin: 0;
+        border-radius: 0 0 10px 10px;
+        margin-bottom: -20px; 
+    }
+    article.data-town div h2 {
+        font-size: 2rem;
+        margin: 0 ;
+        
+    }
+    
+    article.data-town div h3 {
+        font-style: italic; 
+        margin-top: 3px ;
+    }
+    
+    article.data-town div p {
+        margin: 0;
+        padding-bottom: 5px ;
+        
+    }
+
+}

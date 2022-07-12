@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Diego Gomez Portal</title>
+    <meta name="description" content="Assignmet Preston Town page by Diego Gomez in WDD 230. Brigham Young University - Idaho">
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Roboto:wght@200&display=swap" rel="stylesheet">
+    <link href="CSS/small.css" rel="stylesheet">
+    <link href="CSS/normalize.css" rel="stylesheet">
+    <link href="CSS/medium.css" rel="stylesheet">
+    <link href="CSS/large.css" rel="stylesheet">
+</head>
+    <body>
+        <div id="banner" style="display:none">
+            <p>Saturday= Preston Pancakes in the Park!<br> 9:00 a.m.
+                 Saturday at the city park pavilion.</p>
+        </div>
+       <div class="container">
+           <header>
+                <div class="logos">
+                <img src="images/Wherever.png" alt="logo-site">
+                 </div>
+                <div class="headings">
+                    <h1>Wherever Weather</h1>
+                    <div class="motto">Weather is good: To know the weather is better.</div>
+                </div>  
+           </header>
+           <nav>
+               <ul class="navigation">
+                <li><a class="ham" href="#">&#9776; Menu</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="current" href="preston.html">Preston</a></li>
+                <li><a href="#">Soda Springs</a></li>
+                <li><a href="#">Fish Haven</a></li>
+                <li><a href="stormcenter.html">Storm Center</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+               </ul>
+           </nav>
+           <main> 
+               <h2 class="main-header">Preston Idaho</h2>   
+
+                <section class="content-banner">
+                    <picture>
+                        <source media="(max-width: 520px)" srcset="images/rszHero500.jpg">
+                        <source media="(max-width: 960px)" srcset="images/rszHero800.jpg">
+                        <source media="(min-width: 961px)" srcset="images/rszHero1200.jpg">
+                        <img class="banner-img" src="images/banner-hero-large.jpg" alt="mainBanner">
+                    </picture>
+                    <table class="banner-Table">
+                        <caption>Weather Summary</caption>
+                         <tr>
+                            <th>Currently:</th>
+                            <!-- <td>Sunny</td> -->
+                            <td><span class="weathercurrent"></span></td>
+                         </tr>
+                         <tr>
+                            <th>High:</th> 
+                            <!-- <td><span class="temper">76</span>*F</td> -->
+                            <td><span class="temper"></span>*F</td>
+                        </tr>
+                         <tr>
+                            <th>Wind Chill:</th>
+                            <td><span class="windch"></span>*F</td>
+                         </tr>
+                         <tr>
+                            <th>Humidity:</th>
+                            <!-- <td>69%</td> -->
+                            <td><span class="humidity"></span></td>
+                         </tr>
+                         <tr>
+                            <th>Wind Speed:</th>
+                            <!-- <td><span class="wspeed">5</span>mph</td> -->
+                            <td><span class="wspeed"></span>mph</td>
+                         </tr>
+                    </table>
+                </section>
+                <section class="content-table">
+                    <table class="week-weather">
+                        <thead>
+                            <tr>
+                                <th class="t-head">Monday</th>
+                                <th class="t-head">Tuesday</th>
+                                <th class="t-head">Wednesday</th>
+                                <th class="t-head">Thursday</th>
+                                <th class="t-head">Friday</th>
+                            </tr>
+                        </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="t-head t-desc"><img class="iconTable" src="images/sun.png" alt="sunnyDay"><br><span class="iconText"></span></td>
+                                    <td class="t-head t-desc"><img class="iconTable" src="images/sun.png" alt="sunnyDat"><br><span class="iconText"></span></td>
+                                    <td class="t-head t-desc"><img class="iconTable" src="images/cloud.png" alt="ClaudyDay"><br><span class="iconText"></span></td>
+                                    <td class="t-head t-desc"><img class="iconTable" src="images/rain.png" alt="rainyDay"><br><span class="iconText"></span></td>
+                                    <td class="t-head t-desc"><img class="iconTable" src="images/snow.png" alt="snowDay"><br><span class="iconText"></span></td>
+                                </tr>
+                            </tbody>
+                    </table>
+                </section>
+                <section class="content-article">
+                    <div class="img-container">
+                        <img class="img-founder" src="images/idaho.jpg" alt="idaho">
+                        </div>
+                    <h2 class="founder-header">Founders Day Fresco</h2>
+                    <h3>By Diego Gomez </h3>
+                    
+                    <p>On March 4, 1863, President Abraham Lincoln signed a law creating Idaho Territory from parts of Washington Territory and Dakota Territory, establishing his capital at Lewiston. The original Idaho Territory consisted of most of the areas of present-day Idaho, Montana, and Wyoming, and had a population of less than 17,000. Idaho Territory assumed modern state borders in 1868, and was admitted to the Union as a state in 1890.
+
+                        When Idaho became a territory, the legislature was based in the city of Lewiston. However, Boise was growing due to the discovery of gold, and in 1864 the capital moved to Boise.
+                        
+                        However, the transfer of the capital to Boise created many problems in the territory, due to Boise's location at the southern end of the Territory. Communication problems between the north and south caused some of the Idaho Territory to be moved to other territories</p>
+                    
+                </section>
+                <section class="contact-info">
+                    <h3>Contact Information</h3>
+                    <h4>Wherever Weather</h4>
+                    <div class="contact-content">
+                        <img src="images/address.png" alt="weatherAddress"><p>30 N 1st E</p>
+                        <img src="images/phone.png" alt="weatherPhone"><p>999 999 9999</p>
+                        <img src="images/email.png" alt="weatherEmail"><p>whateverWeather@tws.com</p>
+                  </div>
+                    <div class="social-content">
+                        <a href="#"><img src="images/facebook.ico" alt="Facebook logo"></a>
+                        <a href="#"><img src="images/instagram.ico" alt="Instagram logo"></a>
+                        <a href="#"><img src="images/twitter.ico" alt="Twitter logo"></a>
+                        <a href="#"><img class="whatsapp" src="images/Whatsapp.ico" alt="whatsapp logo"></a>
+                    </div> 
+                    <div class="maps-container">
+                        <img class="maps" src="images/maps.jpg" alt="google-maps">
+                    </div>             
+                </section>
+           </main>
+           <footer>
+                <p class="footer-page">&copy; The Weather Site | Attribution  | Diego A. Gomez |
+                    <span><a href="https://openweathermap.org/" target="_blank">OpenWeather</a></span></p>
+                <p class="last-update">Last Updated:<span id="currentDate"></span></p>
+           </footer>
+            <script src="JS/respnav.js"></script>
+            <script src="JS/banner.js"></script>
+            <script src="JS/dateCurrent.js"></script>
+            <script src="JS/weathapi.js"></script>
+            <!-- <script src="../JS/windchill.js"></script> -->
+       </div>
+    </body>
+</html>
