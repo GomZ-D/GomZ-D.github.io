@@ -13,7 +13,7 @@
         width: 80%;
     }
     section {
-        margin: 30px;
+        /* margin: 30px; */
     }
 
     .week-weather { width: 60%; margin: 0 auto;}
@@ -111,4 +111,21 @@
         
     }
 
-}
+
+    .article-event {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .event-upcoming {
+        height: 280px;
+        padding-top: 25px ;
+    }
+
+    /* .content-article {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }*/
+} 
