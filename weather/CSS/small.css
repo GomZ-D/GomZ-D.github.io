@@ -35,11 +35,11 @@ min-width: 100%;
     text-align: center;
     font-size: 35px;
     margin: 10px auto;
-    font-family: 'Gentium Plus', serif; ;
+    font-family: 'Gentium Plus', serif;
 
 }
 /*-----------TABLE BANNER-------------*/
-
+ 
 .banner-Table{
     grid-row: 2/3;
     /* margin-top: 5px;
@@ -67,7 +67,11 @@ caption {
     font-style: italic;
 } */
 /*---------TABLE WEATHER----------*/
-.week-weather{width: 100%; display: none;
+h2.days-weather {
+    text-align: center;
+    font-family: 'Gentium Plus', serif;
+}
+.week-weather, h2.days-weather{width: 100%; display: none;
 }
 .week-weather, .t-head {
     border: thin solid #333;
@@ -410,6 +414,7 @@ article.data-town div {
 article.data-town div h2 {
     font-size: 2rem;
     margin: 0 ;
+    font-family: 'Gentium Plus', serif;
     
 }
 
@@ -436,6 +441,7 @@ article.data-town div p {
     margin: 10px;
     background-color:#afdedc ;
 }
+h3.event-desc {font-family: 'Gentium Plus', serif;}
 
 .event-desc {
     border-bottom: 2px solid #1b4de4;

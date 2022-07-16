@@ -12,9 +12,7 @@
     main {
         width: 80%;
     }
-    section {
-        /* margin: 30px; */
-    }
+    
 
     .week-weather { width: 60%; margin: 0 auto;}
     .contact-info {
@@ -62,7 +60,7 @@
 
     /*-------------HOME PAGE---------*/
 
-    section.towns {
+    div.towns {
         display:grid;
         grid-template-columns: repeat(3,1fr);
         justify-items: center;
@@ -123,9 +121,4 @@
         height: 280px;
         padding-top: 25px ;
     }
-
-    /* .content-article {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }*/
 } 
