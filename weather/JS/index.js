@@ -28,7 +28,9 @@ function createSite(array,source) {
     article.appendChild(imagen);  
        
 }
-
+function eventDesc (array) {
+    document.querySelector('.event-desc-a').textContent = array.events[0];
+}
 
 const requestURL = "https://byui-cit230.github.io/weather/data/towndata.json";
 
@@ -55,6 +57,7 @@ fetch(requestURL)
         if (town2.name == 'Fish Haven'){
             let SRC = "./images/town2.jpg"
             createSite(town2,SRC)
+            eventDesc(town2)
         }
     //   }); 
 });
