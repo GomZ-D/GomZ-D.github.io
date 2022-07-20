@@ -1,0 +1,65 @@
+{
+    "rentals": [
+      {
+        "name": "Honda Metro Scooter",
+        "maxperson": 1,
+        "reservhalfday": "$20",
+        "reservfulldat": "$30",
+        "walkhalfdat": "$25",
+        "walkfullday": "$35",
+        "imgaeurl": "images/rental-metropolitan.jpg"
+        
+      },
+      {
+        "name": "Honda Dio Scooter",
+        "maxperson": 2,
+        "reservhalfday": "$30",
+        "reservfulldat": "$40",
+        "walkhalfdat": "$35",
+        "walkfullday": "$45",
+        "imgaeurl": "images/rental-scooter2-a.jpg"
+        
+      },
+      {
+        "name": "Honda PCX150 Scooter",
+        "maxperson": 2,
+        "reservhalfday": "$40",
+        "reservfulldat": "$50",
+        "walkhalfdat": "$45",
+        "walkfullday": "$55",
+        "imgaeurl": "images/rental-scooter2-b.jpg"
+        
+      },
+      {
+        "name": "Honda Pioneer ATV",
+        "maxperson": 4,
+        "reservhalfday": "$50",
+        "reservfulldat": "$70",
+        "walkhalfdat": "$60",
+        "walkfullday": "$80",
+        "imgaeurl": "images/rental-jeepsuv.jpg"
+        
+      },
+      {
+        "name": "Jeep Wrangler-4 door",
+        "maxperson": 5,
+        "reservhalfday": "$70",
+        "reservfulldat": "$100",
+        "walkhalfdat": "$85",
+        "walkfullday": "$125",
+        "imgaeurl": "images/rental-jeep2door.jpg"
+        
+      },
+      {
+        "name": "Jeep Wrangler-2 door",
+        "maxperson": 4,
+        "reservhalfday": "$60",
+        "reservfulldat": "$85",
+        "walkhalfdat": "$70",
+        "walkfullday": "$90",
+        "imgaeurl": "images/rental-jeep1door.jpg"
+        
+      }
+    
+    ]
+  }

@@ -158,6 +158,29 @@ fieldset {
     padding: 2rem;
      
 }
+ /*---------------------RENTAL-----------*/
+ .rental-header {
+    font-size: 4rem;
+   
+}
 
+ /*----------------TABLE PRICE RENTAL----------*/
+
+
+.table-details, .table-details tr, .table-details td, .table-details th {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+
+}
+.table-price h3 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+/*-------------------RENTALS CARDS-----------*/
+.cards {
+    grid-template-columns: 1fr 1fr;
+}
 
 }

@@ -478,3 +478,73 @@ div.legal {
 .legal {
     border-top: 2px solid var(--red);
 }
+
+/*-----------------RENTAL MAIN--------*/
+.rental-header { font-size: 3rem;}
+
+img.banner-rental {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*----------------TABLE PRICE RENTAL----------*/
+section.table-price {
+    /* width: 100%; */
+    /* margin: 0 auto; */
+    overflow-x: auto;
+}
+.table-details, .table-details tr, .table-details td, .table-details th {
+  border: 1px solid black; 
+  border-collapse: collapse; 
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0.2rem;
+  color:white;
+  background-color: var(--gray);
+  font-size: 0.6rem;
+
+} 
+
+.table-price h3{
+    background-color: var(--gray);
+    margin: 0 auto;
+    /* padding: 0.5rem; */
+    padding: .5rem 0;
+    font-size: 1rem;
+    color: var(--tomato);
+    width: 90%;
+}
+
+/*-------------------RENTALS CARDS------------------*/
+section .cards-container {
+    width: 100%;
+    margin: 0 auto;
+}
+.cards {
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    box-shadow: 0 0 20px #333;
+    color:white;
+}
+
+.cards img { 
+    display: block;
+    width: 60%;
+    margin: 1rem auto;
+    box-shadow: 0 0 10px 5px #333;
+    border-radius: 5px;}
+div.cards h2 {
+    text-align: center;
+}
+
+div.cards section {
+    border: 2px solid var(--red);
+    background-color: var(--gray);
+    text-align: center;
+    padding: 0 2% 0 2%;
+}

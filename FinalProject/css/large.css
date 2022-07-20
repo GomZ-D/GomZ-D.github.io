@@ -83,7 +83,52 @@ article.fleet-card img {
 .weather-table {
     margin-top: 10px;
 }
+
+ /*---------------------RENTAL-----------*/
+ 
+
+.rental-header {
+    font-size: 6rem;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 1;
+}
+.contain-header {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+img.banner-rental {
+    width: 80%;
+    grid-column: 1;
+    grid-row: 1;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+/*----------------TABLE PRICE RENTAL----------*/
+.table-price {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.table-details, .table-details tr, .table-details td, .table-details th {
+     width: 80%;  
+    font-size: 0.8rem;
+    padding: 0.5rem;
+
+}
+.table-price h3 {
+    width: 80%;
+    font-size: 1.5rem;
+}
+.cards {
+    grid-template-columns: repeat(3,1fr);
+}
+
 }
 
 
+
  
+
+
