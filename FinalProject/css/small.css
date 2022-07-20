@@ -20,11 +20,16 @@ font-family: 'Playfair Display', serif;
 body { 
     font-family: 'Roboto Serif', serif;
      width: 100%;
+     margin: 0 auto;
+     /* background-color: #e5e5f7; */
+/* opacity: 0.8; */
+    background-image: radial-gradient(#9f0000 0.5px, #e5e5f7 0.5px);
+    background-size: 10px 10px;
 }
  
 .main-div {
     width: 100%;
-    height: 300px;
+    /* height: 300px; */
     margin: 0 auto;
     background-color: antiquewhite;
 }
@@ -32,7 +37,7 @@ body {
 header{
     background-color: var(--red);
 }
-/*----Logo and Header----*/
+/*--------------Logo and Header----------------*/
 
 .logo-flex {
     display: flex;
@@ -57,7 +62,7 @@ p.logo-title {
     margin: 0 auto;
 }
 
-/*------Navigation Bar-----*/
+/*----------------Navigation Bar--------------------*/
 
 .navbar ul {
     padding: 0;
@@ -114,7 +119,210 @@ ul {
     background-color: red;
 }
 
-/*---------------FOOTER------------*/
+/*---------------MAIN SECTION and TABLE---------------------*/
+.grid-main {
+     display: grid;
+     grid-template-columns: 1fr;
+     /* grid-template-rows: repeat(3,1fr); */
+}
+
+picture {
+   grid-column: 1;
+   grid-row: 2/3;  
+   overflow: hidden;
+}   
+div.action-button {
+    grid-column: 1;
+    grid-row: 2/3;
+    z-index: 1;
+    align-self: end;
+    justify-self: center;
+    margin-bottom: 10px;
+
+   
+}
+main  {
+    width: 100%;
+    margin: 0 auto;
+}
+main h1 {
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-size: 3rem;
+    text-shadow: 2px 2px 1px #0a0a0a;
+    margin: 0.5rem;
+    color: var(--darkred);
+}
+main .sub-header {
+    display: none;
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+
+}
+
+.weather-table {
+    margin: 0 auto;
+    border-collapse:collapse ;
+    width: 95%;
+    background-color: #5e0808;
+   
+}
+.weather-table tr th {
+    text-align: left;
+    padding: 0.5rem;
+    
+    
+}
+.weather-table tr {
+    text-align: right;
+    color: white;
+    border-radius: 5px;
+}
+span.weathercurrent, td {
+    padding-right: 8px;
+}
+
+.weather-table tr:nth-child(odd){
+    background-color: var(--gray);
+}
+caption {
+    /* border-bottom: 1px solid black; */
+    font-family: 'Edu SA Beginner', cursive;
+    font-size: 1.5rem;
+}
+
+picture img {
+    width: 100%;
+}
+
+ 
+
+.rent-button {
+    font-size: 1.3rem;
+    font-weight: bolder;
+    color: var(--black);
+    font-family: 'Merriweather', serif;
+    border: 3px solid var(--tomato);
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: transparent;
+}
+.rent-button:hover {
+    background-color: var(--darkred);
+    color: white;
+    cursor: pointer;
+} 
+
+/*--------------TABLE WEATHER 5 DAYS---------*/
+
+ 
+.sub-header-table {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+.week-weather, h2.sub-header{
+     
+    width: 100%; 
+    /* display: none; */
+}
+.week-weather, .t-head {
+    border: thin solid var(--darkred);
+    border-collapse: collapse;
+    padding: 5px;
+    margin-bottom: 10px;
+  
+}
+
+.t-head {
+    background-color: var(--darkred);
+    color: white;
+}
+.t-desc {
+    background-color: #9fb3d4 ;
+	font-size: 0.8rem;
+    margin-top: 100px;
+	text-align: center;
+}
+td > img {
+    max-width: 70px;
+    margin:  0;
+    padding: 0; 
+}
+.iconText {
+    font-size: 1.3rem;
+    color: var(--black);
+    font-weight: bolder;
+}
+
+/*---------------FLEET SECTION------------------*/
+
+section h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Merriweather', serif;
+    
+    /* text-shadow: 2px 2px 0 #0a0a0a; */
+    margin: 0.5rem;
+    color: var(--darkred);
+}
+ 
+article.fleet-card{
+    width: 70%;
+    margin: 20px auto;
+    /* border: 1px solid #ddd; */
+    /* padding: 1rem; */
+    box-shadow: 0 0 20px #333;
+    border-radius: 10px;
+
+}
+
+article.fleet-card img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px 10px 0 0;
+
+}
+
+article.fleet-card div {
+    text-align: center;
+    background-color: #9b9e62;
+    border-radius: 0 0 10px 10px;
+
+}
+article.fleet-card div h4 {
+    font-style: italic; 
+    margin-top: 0px ;
+    padding-top: 1rem;
+    font-size: 1.2rem;
+}
+article.fleet-card div p {
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+div.fleet-text {
+    padding: 2rem;
+}
+
+/*--------------DISCOVER FLEET SECCTION----------*/
+
+.discover-data {
+    /* border: 1px solid red; */
+    width: 90%;
+    margin: 0 auto; 
+    background-color: white;
+}
+
+.discover-data picture img {
+    width: 100%;
+}
+
+.discover-text {
+    margin: 10px;
+}
+
+/*---------------FOOTER----------------------------*/
 footer {
     background-color: #292929;
     color: white;
@@ -265,4 +473,8 @@ div.legal {
 
 .legal-right{
     text-align: center;
+}
+
+.legal {
+    border-top: 2px solid var(--red);
 }

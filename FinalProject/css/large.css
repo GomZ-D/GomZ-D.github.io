@@ -1,3 +1,89 @@
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width:60em) {
 
+.weather-table {
+    grid-row: 1/2
 }
+
+.main-header {
+    grid-column: 1/3;
+    grid-row: 1;
+    z-index: 1;
+    justify-self: left;
+    font-size: 5rem;
+    
+}
+
+h2.sub-header {
+    grid-column: 1/3;
+    grid-row: 1;
+    z-index: 1;
+    justify-self: left;
+    align-self: flex-end;
+    font-size: 2.5rem;
+    
+    
+}
+
+picture {
+    grid-row: 1/7;
+}
+
+div.action-button {
+    grid-row: 5/6;
+}
+
+
+
+
+
+section.fleet-flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+}
+
+article.fleet-card{
+    display: block;
+    grid-row: 2;
+    align-items: center;
+    width: 80%;
+}
+
+.fleet-flex h3 {
+    grid-row: 1;
+    grid-column: 2/3;
+}
+
+article.fleet-card img {
+    width: 100%;
+}
+
+
+/*--------------DISCOVER FLEET SECCTION----------*/
+
+.discover-data {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+ 
+.discover-img {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    
+}
+
+.weather-table caption {
+    color: var(--black);
+    font-weight: bolder;
+}
+
+.weather-table {
+    margin-top: 10px;
+}
+}
+
+
+ 

@@ -36,8 +36,110 @@
         
     </header>
     <main>
-      <div class="main-div">dfas</div>
-  </main>
+      <section class="grid-main"> 
+        <h1 class="main-header">WELCOME</h1>
+        <h2 class="sub-header" id="grid-sub"> SCOOT YOUR VACATIONS </h2>
+        <!-- <div class="content-banner"> -->
+          <picture class="banner-container" id="banner">
+              <source media="(max-width: 520px)" srcset="images/bannerhero600.jpg">
+              <source media="(max-width: 960px)" srcset="images/bannerhero800.jpg">
+              <source media="(min-width: 961px)" srcset="images/bannerhero1280.jpg">
+              <img class="banner-img" src="../images/banner-hero-large.jpg" alt="mainBanner">
+          </picture>
+
+          <div class="action-button">
+            <button class="rent-button" onclick="rental.html">Rent NOW!</button>
+          </div>  
+        <table class="weather-table">
+            <caption>Weather in Cozumel:</caption>
+             <tr>
+                <th>Sky:</th>
+                <td><span class="weathercurrent"></span></td>
+             </tr>
+             <tr>
+                <th>Temperature:</th> 
+                <td><span class="temperature"></span> *F</td>
+            </tr>
+             <tr>
+                <th>Humidity:</th>
+                <td><span class="humidity"></span> %</td>
+             </tr>
+        </table>
+        
+    <!-- </div> -->
+    </section>
+    <section class="fleet-flex">
+      <h3>Quick Look at our Fleet:</h3>
+      <article class="fleet-card">
+        <img src="images/motohome1.jpg" alt="scooter">
+        <div class="fleet-text">
+          <h4>Scooters</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Maxime aperiam non, inventore pariatur sequi nam laborum.
+           </p>
+        </div>
+      </article>
+      <article class="fleet-card">
+        <img src="images/motohome2.jpg" alt="friends">
+        <div class="fleet-text">
+          <h4>ATV Side-by-Side</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Maxime aperiam non, inventore pariatur sequi nam laborum.
+          </p>
+        </div>
+      </article>
+      <article class="fleet-card">
+        <img src="images/motohome3.jpg" alt="jeep">
+        <div class="fleet-text">
+          <h4>Jeeps</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Maxime aperiam non, inventore pariatur sequi nam laborum.
+          </p>
+        </div>
+      </article>
+   </section>
+   <section class="discover-data">
+     <div class="discover-text">
+       <h3>Discover Cozumel</h3>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Nisi nobis neque quia facere sunt magnam id labore nulla?
+          Sequi asperiores dolor vel nemo a voluptatem dolorum ipsa 
+          eligendi culpa velit Lorem ipsum dolor, sit amet consectetur
+           adipisicing elit. Iusto eos ad id sint fuga, facere tempora,
+            architecto repudiandae veritatis accusantium quasi ea 
+            incidunt in sapiente nobis recusandae aut illo nostrum!.</p>
+     </div>
+     <picture class="discover-img">
+      <source media="(max-width: 520px)" srcset="images/discover.jpeg">
+      <source media="(max-width: 960px)" srcset="images/discover.jpeg">
+      <source media="(min-width: 961px)" srcset="images/discover.jpeg">
+      <img class="discover-map" src="images/cozumel-map.gif" alt="mainBanner">
+  </picture>
+   </section>
+    <section class="content-table">
+      <h2 class="sub-header-table">Next 5 Days Weather</h2>
+      <table class="week-weather">
+          <thead>
+              <tr>
+                  <th class="t-head weektext"></th>
+                  <th class="t-head weektext"></th>
+                  <th class="t-head weektext"></th>
+                  <th class="t-head weektext"></th>
+                  <th class="t-head weektext"></th>
+              </tr>
+          </thead>
+              <tbody>
+                  <tr>
+                    <td class="t-head t-desc"><img class="iconTable" src="images/sun.png" alt="sunnyDay"><br><span class="iconText"></span></td>
+                    <td class="t-head t-desc"><img class="iconTable" src="images/sun.png" alt="sunnyDat"><br><span class="iconText"></span></td>
+                    <td class="t-head t-desc"><img class="iconTable" src="images/sun.png" alt="ClaudyDay"><br><span class="iconText"></span></td>
+                    <td class="t-head t-desc"><img class="iconTable" src="images/sun.png" alt="rainyDay"><br><span class="iconText"></span></td>
+                    <td class="t-head t-desc"><img class="iconTable" src="images/sun.png" alt="snowDay"><br><span class="iconText"></span></td>
+                  </tr>
+              </tbody>
+      </table>
+  </section>
+    </main>
     <footer>
         <div class="footer-container">
           <img src="images/logo.png" class="logo-footer" alt="logo">
@@ -127,6 +229,7 @@
          
     </footer>
     <script src="script/respnavbar.js"></script>
+    <script src="script/weatherSumary.js"></script>
     
 </body>
 </html>
