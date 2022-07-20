@@ -1,0 +1,87 @@
+@media only screen and (min-width:32.5em){
+
+
+/*----Logo and Header----*/
+
+.logo-flex {
+    flex-direction: row;
+    align-items: center;
+}
+
+header div p {
+    display: block;
+}
+.moto-text {
+    display: block;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+ 
+
+/*----Navigation Bar------*/
+
+.navbar ul {
+    display: flex;
+    /* margin:0; */
+    border-bottom: 1px solid white;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: block;
+    flex: 1 1 auto;
+    font-size: 2rem;
+}
+
+.navbar ul li a {
+    text-align: center;
+}
+
+.navbar li:first-child {
+    display: none;
+}
+
+#current {
+    color: var(--tomato);
+}
+
+
+/*-------------------FOOTER--------------*/
+
+div.footer-container {
+    display: grid;
+   grid-template-columns: 1fr 1fr;
+   cursor:pointer ;
+    padding: 1rem; 
+}
+
+.logo-footer {
+    margin: 0;
+}
+
+.footer-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+}
+ 
+.footer-form {
+    grid-row: 1;
+    grid-column: 3/ 4;
+    border: none;
+}
+fieldset {
+    margin-top: 2rem;
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding: 2rem;
+     
+}
+
+.legal {
+    border-top: 2px solid var(--red);
+}
+}
