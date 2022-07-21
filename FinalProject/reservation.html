@@ -36,7 +36,73 @@
         
     </header>
     <main>
-      <div class="main-div">dfas</div>
+       <section class="main-rental">
+         <h1 class="reservation-header">RESERVATIONS</h1>
+         <div class="form-container">
+           <div class="agreement">
+             <h3>Scoot Form:</h3>
+             <h4>Agreement Information</h4>
+             <ul class="rental-lists">
+               <li>A $50 security deposit is required to confirm reservations.</li>
+               <li>A valid drivers license is required in hand at time of rental.</li>
+               <li>No one under 12 years of age is allowed to ride on the scooters.</li>
+               <li>Fuel charge not included.</li>
+               <li>Unlimited mileage.</li>
+               <li>Liability insurance is free of charge.</li>
+               <li>Reservations rate requires 24 hour prior notification.</li>
+               <li>Free delivery to Cozumel hotel, Airbnb, or private residence for 2+ day rentals.</li>
+               <li>Payment via Google Pay, cash, credit card, debit card, or PayPal.</li>
+               <li>Rentals may be returned to either location.</li>
+             </ul>
+             </div>
+             <form class="form-data" action="thanks.html">
+               <div class="form-flex">
+              <fieldset>
+                <legend>Scoot your Vacations</legend>
+                <label class="form-top">First Name* <input type="text" name="fname" required></label> 
+                <label class="form-top">Last Name* <input type="text" name="lname" required></label> 
+                <label class="form-top">Phone <input type="tel" name="tel" placeholder="1235551234" ></label>
+                <label class="form-top">Email* <input type="email" name="email" placeholder="sameone@gmail.com" required ></label>
+                <label class="form-top">Country
+                  <select name="country">
+                      <option value="">Please Select &#9662;</option>
+                      <option value="argentina">Argentina</option>
+                      <option value="estado">EE.UU</option>
+                      <option value="mexico">Mexico</option>
+                      <option value="canda">Canada</option>
+                      <option value="spain">Spain</option>
+                      <option value="france">France</option>
+                      <option value="brazil">Brazil</option>
+                      <option value="narnia">Narnia</option>
+                  </select>
+                </label>
+              </fieldset>
+              <fieldset>
+                <legend>Rental Information</legend>
+                <label class="form-top">Pick-up Date<input type="date" name="completedDate"></label>
+                <label class="form-top">Return Date<input type="date" name="completedDate"></label>
+                <div class="form-top">Type of Rental</div>
+                <label class="type-rental"><input type="checkbox" name="hondam" value="yes">Honda Metropolitan (49cc)</label>
+                <label class="type-rental"><input type="checkbox" name="hondad" value="yes">Honda Dio (110cc)</label>
+                <label class="type-rental"><input type="checkbox" name="hondapc" value="yes">Honda PCX150 (149cc)</label>
+                <label class="type-rental"><input type="checkbox" name="hondapion" value="yes">Honda Pioneer 1000</label>
+                <label class="type-rental"><input type="checkbox" name="jeepw" value="yes">4 doors Jeep Wrangler</label>
+                <label class="type-rental"><input type="checkbox" name="jeepw2" value="yes">2 doors Jeep Wrangler</label>
+            </fieldset>
+            <fieldset>
+              <legend>Additional Information</legend>
+              <div class="form-top">Need a Drop-off location: </div>
+              <label class="type-rental"><input type="radio" name="Drop-off" value="yes">Yes</label>
+              <label class="type-rental"><input type="radio" name="Drop-off" value="no">No</label>
+              <label class="type-rental form-top" for="comments">Comments:
+              <textarea id="comments" name="comments" placeholder="Leave comments.." style="height:200px"></textarea></label>
+            </fieldset>
+               </div>
+            <input type="submit" value="Rent Scoot " class="submitBtn">
+               
+          </form>
+           </div>
+       </section>
   </main>
     <footer>
         <div class="footer-container">
@@ -106,7 +172,7 @@
         <!-- </div> -->
         <div class="footer-form">
             <form class="form-home" method="post" action="file.php">
-                <fieldset>
+                <fieldset class="form-field">
                 <legend>Contact Us</legend>
                 <label class="form-group">
                     <input type="email" class="form-footer"   placeholder="Enter email">

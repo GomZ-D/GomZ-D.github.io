@@ -84,11 +84,11 @@ article.fleet-card img {
     margin-top: 10px;
 }
 
- /*---------------------RENTAL-----------*/
+ /*---------------------RENTAL PAGE-----------*/
  
 
 .rental-header {
-    font-size: 6rem;
+    font-size: 5rem;
     grid-column: 1;
     grid-row: 1;
     z-index: 1;
@@ -125,7 +125,25 @@ img.banner-rental {
     grid-template-columns: repeat(3,1fr);
 }
 
+/*--------------FORM PAGE-----------*/
+/*--------------RESERVATION MAIN SECCION---------*/
+.reservation-header {
+    font-size: 5rem;
 }
+
+.form-flex {
+    flex-direction: column;
+}
+
+/*---------------------THANKS PAGE------------*/
+
+.box-thanks {
+    width: 60%;
+}
+
+
+}
+
 
 
 
