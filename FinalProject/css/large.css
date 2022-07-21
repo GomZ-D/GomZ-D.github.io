@@ -132,9 +132,7 @@ img.banner-rental {
     width: 80%;
     margin: 0 auto;
 }
-.reservation-header {
-    font-size: 5rem;
-}
+ 
 
 .form-flex {
     flex-direction: column;
@@ -151,6 +149,13 @@ img.banner-rental {
     width: 80%;
     margin: 0 auto;
 }
+
+/*---------------------TOUR PAGE--------*/
+
+.card-tour {
+    width: 70%;
+}
+
 
 }
 
