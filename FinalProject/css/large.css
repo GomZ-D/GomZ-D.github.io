@@ -127,6 +127,11 @@ img.banner-rental {
 
 /*--------------FORM PAGE-----------*/
 /*--------------RESERVATION MAIN SECCION---------*/
+
+.main-rental{
+    width: 80%;
+    margin: 0 auto;
+}
 .reservation-header {
     font-size: 5rem;
 }
@@ -140,7 +145,12 @@ img.banner-rental {
 .box-thanks {
     width: 60%;
 }
+/*------------------CONTACT US----------*/
 
+.main-contact {
+    width: 80%;
+    margin: 0 auto;
+}
 
 }
 

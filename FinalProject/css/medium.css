@@ -158,6 +158,10 @@ fieldset {
     padding: 2rem;
      
 }
+
+div.legal {
+    margin-top: 0;
+}
  /*---------------------RENTAL-----------*/
  .rental-header {
     font-size: 4rem;
@@ -202,5 +206,36 @@ fieldset {
 .box-thanks {
     width: 70%;
 }
+/*------------------CONTACT US----------*/
 
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
+
+.form-contactus {
+    width: 100%;
+    border: 1px solid var(--black);  
+    background-color: #999;
+    height: 100%;
+    /* margin: 0; */
+}
+.contact-addrees {
+    width: 100%;
+    /* margin-right: 0; */
+}
+
+.cantact-head{
+   text-align: center;
+   padding-top: 40px;
+   font-weight: bolder;
+   
+}
+
+.maps {
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
+}
+}
+
