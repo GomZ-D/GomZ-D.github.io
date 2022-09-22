@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes WDD 330</title>
+    <link href="/style/normalize.css" rel="stylesheet">
+    <link href="/style/small.css" rel="stylesheet">
+    <link href="/style/medium.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-content">
+        <header class="myHeader lesson">
+            <div class="box"> 
+                 <a class="linkHome" href="/index.html" target="_self">Home</a>
+            </div>
+            <div class="mytitle">
+                <h1>Week 02 - Lesson 03</h1> 
+                
+            </div>
+        </header>
+        <main>
+             <h3 class="note-titulo">The Window Object</h3>
+             <p>Collection of properties and methods that contains information about the browser and computer.
+                There are available through the Windows Object.
+                Global variables are actual properties of a Global Object (windows Object)
+                </p>
+            <h3>Dialogs</h3>
+            <p>Not part of EcmaScript, but of windows object: Alert(), Confirm() and prompt().</p>
+           <h3>Browser Information</h3>
+            <p>Navigation properties that reference the navigator object: Information of the browser, user Agent properties and information of the operation system.</p>
+            <p>Location:</p>
+            <p>Windows.location, location.href, location.protocol, location.port, location.host, location.hostname, location.pathname, location.search, location.hash, location.reload(), location.assign(), location.replace(), location.toString().</p>
+            <h3>Browser History</h3>
+            <p>Access to the browser history:</p>
+            <p>Window.history.length: How many page have you visited.</p>
+            <p>window.history.go(): go to a specific page.</p>
+            <p>window.history.forward() and history.back() </p>
+            
+            <h3>Controlling Windows</h3>
+            <p>To control the windows of the web browser.</p>
+            <p>Window.open(): opens a page. Windows.close(): Close a windows if you have a reference of it.</p>
+            <p>Window.moveTo(0,0): to move a window. Window.resizeTo(0,0): Width, height of a widows.</p>
+            <h3>Screen Information</h3>
+            <p>This are more useful on mobile to detect a change in its orientation.
+            Window.screen: give us the information about the screen of the browser.
+            Window.screen.heigh, window.screen.width, window.screen.availWidth, window.screen.availHeight, window.screen.colorDepth.</p>
+            
+            <h3>Document Object</h3>
+            <p>It has the properties or methods that deal with the page that has been loaded into the window.</p>
+            <p>Document.write() : write a string of text</p>
+            
+            <h3>Cookies</h3>
+            <p>Small files saved locally on a user’s computer. Store information that can be retrieve between requests. Just can be read by a webpage of the same domain. 4kb of data. It contains list of “name:value”.</p>
+            <p>Document.cookie= ‘name:diego’;</p>
+
+            <h3 class="note-titulo">Templates</h3>
+            <p>Mechanism for holding HTML that is not to be rendered immediately when a page is loaded, but rendered after with JS.</p>
+            <p>For subsequent use in the document.Template element supports global attributes.</p>
+            <p>Avoiding DocumentFragment</p>
+            <p>Always preferable to clone or refer to the elements within it.</p>
+
+            <p>Example:</p>
+            <code>
+                &ltdiv id="container"&gt&lt/div&gt
+
+                <br>&lttemplate id="template"&gt
+                <br>&ltdiv&gtClick me&lt/div&gt
+                <br>&lt/template&gt
+            </code>"
+         
+            
+        </main>
+        <footer>
+            <p>&copy; <span id="currentYear"></span> | Diego A. Gomez | Virginia | BYU | Online Learning</p>
+           
+       </footer>
+    </div>
+</body>
+</html>
