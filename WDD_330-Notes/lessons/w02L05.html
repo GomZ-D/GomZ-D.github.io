@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes WDD 330</title>
+    <link href="/style/normalize.css" rel="stylesheet">
+    <link href="/style/small.css" rel="stylesheet">
+    <link href="/style/medium.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-content">
+        <header class="myHeader lesson">
+            <div class="box"> 
+                 <a class="linkHome" href="/index.html" target="_self">Home</a>
+            </div>
+            <div class="mytitle">
+                <h1>Week 03 - Lesson 05</h1> 
+            </div>
+        </header>
+        <main>
+            <h3 class="note-titulo">AJAX</h3>
+            <p>Allow web sites to communicate asynchronously with a server. Dinamically updates web pages without reloading</p>
+            <p>Sent and receive data in the background. </p>
+            <p>Webpages are no longer statics but dynamic applications.</p>
+            <h3>Clients and Server</h3>
+            <p>Clients like web browser will send a request and server will processes the request and sends back a response. Ajax allow JavaScript to request resources from a server on behalf of the client. The resources requested are usually JASON data, small text or HTML.</p>
+            <p>Server-side use language like: PHP, Ruby, NodeJs or .NET.</p>
+            <h3>Ajax</h3>
+            <p>Asynchronous JavaScript and XML</p>
+            <ul>
+                <li>Asynchronous: When request for data, the program doesn&#39t wait for the response. By using callbacks we manage this.</li>
+                <li>JavaScript: Is the front-end language, is not for communicate with the server. Ajax is the one responsible to send request and receive responses from a server.</li>
+                <li>XML: xml documents were often used to return data but nowadays is JSON the most commonly used.</li>
+            </ul>
+            <p>API: application programming interface. Collection of methods that allow external access to another program or service.</p>
+            <h3>The Fetch API</h3>
+            <p>The XMLHttpRequest object was standardized as part of the HTML5 specifications. Nowadays we use the Fetch API for requesting and sending data asynchronously. Fetch uses promises to avoid callback hell.</p>
+            <p>Basic Example:</p>
+            <code><pre>
+                 Fetch (“URL”)
+                .then(handle the response)
+                .catch(runs if the server returns an error)
+             </pre></code>
+
+             <p>The fetch API has a response interface that deals with the object that is returned when the promise is fulfilled. Responses objects have a number of properties and methods.</p>
+             <p>“ok” property that check if the response is successful (ok return true). Based on HTTP status code. It has a “status” property. 200 response was successful. 201 a resource was created. 204 request  is successful but no content return. “ok” return true if the “status” is between 200 and 299. It will receive a rejected in case of network error.</p>
+             <p>Properties:</p>
+             <ul>
+                 <li>Headers: Contain any header associated with the response</li>
+                 <li>url: A string containing the url of response.</li>
+                 <li>Redirected: Boolean that specifies if the response is a redirect.</li>
+             </ul>
+             <p>Redirect(): method that can be used to redirect to another URL. NO support for this method in any browser.</p>
+            <p>Text Responses: Takes a stream of text from the response.</p>
+             <code>
+                 <pre>
+                 fetch(url)
+                .then( response =&gt response.text() ); // transforms the text 
+                                                         stream into a JavaScript string
+                .then( text =&gt console.log(text) )
+                .catch( error =&gt console.log('There was an error: ', error))
+                </pre>
+            </code>
+            <p>File Responses: The blob() method is used to read a file of raw data.</p>
+            <code>
+                <pre>
+                 fetch(url)
+                .then( response =&gt response.blob() ); // transforms the data
+                                                        into a blob object
+                .then( blob =&gt console.log(blob.type) )
+                .catch( error =&gt console.log('There was an error: ', error))
+
+               </pre>
+           </code>
+           <h3>JSON responses</h3>
+           <p>Most common format for AJAX responses. Transform a stream of JSON data into a JavaScript object.</p>
+           <code>
+               <pre>
+                 fetch(url)
+                .then( response =&gt response.json() ); // transforms the JSON 
+                                                         data into a JavaScript object
+                .then( data =&gt console.log(Object.entries(data)) )
+                .catch( error =&gt console.log('There was an error: ', error))
+                  
+               </pre>
+           </code>
+
+           <h3>Creating a Response Object</h3>
+           <code>
+               <pre>
+                const response = new Response( 'Hello!', {
+                ok: true,
+                status: 200,
+                statusText: 'OK',
+                type: 'cors',
+                url: '/api'
+                });
+                
+               </pre>
+           </code>
+           <p>First argument: data to be returned.
+            Second argument: Object that can be used to provide values.
+            </p>
+
+            <h3>Request interface</h3>
+            <p>We can provide a Request object as an argument.<br>
+                We create this using Request() constructor and have the following properties: url, method, headers, mode, cache, credentials and redirect.
+                </p>
+            <code>
+                <pre>
+                const request = new Request('https://example.com/data', {
+                method: 'GET',
+                mode: 'cors',
+                redirect: 'follow',
+                cache: 'no-cache'
+                });
+                    
+                </pre>
+            </code>   
+            <p>First argument is the URL and is require.  Second argument is an object with the properties listed above.</p>
+            <h3>Headers Interface</h3>
+            <p>Use to pass any additional information about the response or request.<br>
+                Header instance created using a constructor:<br>
+                Const headers = new Header();<br>
+                And can have additional information:<br>
+                const headers = new Headers({ 'Content-Type': 'text/plain', 'Accept-Charset' : 'utf-8', 'Accept-Encoding':'gzip,deflate' })<br>
+                Headers has the following methods: has(), get(), set(), append(), delete().
+                </p>
+            <h3>FormData</h3>
+            <p>Makes it easier to submit information using Ajax.<br>
+                const data = new FormData();<br>
+                Helps to reduce the amount of code needed when submitting forms
+                </p>
+
+
+        
+        
+        </main>
+        <footer>
+            <p>&copy; <span id="currentYear"></span> | Diego A. Gomez | Virginia | BYU | Online Learning</p>
+           
+       </footer>
+    </div>
+</body>
+</html>
