@@ -18,11 +18,170 @@
             </div>
             <div class="mytitle">
                 <h1>Week 01 - Lesson 01</h1> 
-                
             </div>
         </header>
         <main>
-             
+            <h3 class="note-titulo">Course Setup, Groups, GitHub</h3> 
+            <h3>Working with Groups</h3>
+            <p>Teach one Another is very important.</p>
+            <p>Common Issues With Groups: Hard to coordinate schedules, Not everyone contributes evenly and hard to keep everyone on the same page.</p>
+            <p>Tips and tools: </p>
+            <p>Make it a priority. Make time wherever you can. Don’t let your group down.
+                To do that: </p>
+            <ol>
+                <li>A good way to communicate</li>
+                <li>a good way to follow up tasks</li>
+                <li>A way to avoid stepping on each others.</li>
+            </ol><br>
+            <p>Tools:</p>
+            <ul>
+                <li>Slack: Most developers uses.</li>
+                <li>Trello: free tool. Can create a board with backlog, defects, doing and done.</li>
+                <li>GitHub: Is to share what they have done with each other. This tool track changes.</li>
+            </ul>
+            <br>
+            <p>Putting all together</p>
+            <ol>
+                <li>Login to slack or teams a look for updates</li>
+                <li>Open trello and look the Backlog and Doing list</li>
+                <li>Pick up a task to do and move it to Doing</li>
+                <li>Make a pull</li>
+                <li>Open my editor and complete task.</li>
+                <li>Push and Commit</li>
+                <li>Move task in trello to Done</li>
+                <li>Make any updates to Slack or Teams.</li>
+            </ol>
+            <br>
+            <h3>Managing The Modern Frontend Workflow</h3>
+            <p>Web development projects are complicated. 
+                Some tasks that could need to happen every time something changes:
+                </p>
+            <ol>
+                <li>Lint CSS and JavaScript</li>
+                <li>Run Unit Tests to make sure nothing got broken</li>
+                <li>Compile all SCSS/LESS to CSS</li>
+                <li>Concatenate all CSS into one file for faster loading</li>
+                <li>Minify the CSS to reduce size</li>
+                <li>Transpile JS with Babel for support in older browsers</li>
+                <li>Concatenate all JS file for faster loading</li>
+                <li>Minify and Uglify JS to reduce size.</li>
+                <li>Do the same with 3rd party CSS or JS</li>
+                <li>Move all production assets into a distribution directory to separate from development part.</li>
+            </ol>
+            <br>
+            <p>Tools fall into three categories:</p>
+            <ol>
+                <li>Package managers: We use npm for our package manager. Track of all the external dependencies for our app.</li>
+                <li>Bundlers: Handle the compiling, transpiling, concatenating, minifying. We use SNOWPACK.</li>
+                <li>Task Managers: These keep track of what needs to be done and when. We use npm.</li>
+            </ol>
+            <br>
+            <h3>Course Setup</h3>
+            <p>Code Editor<br>
+                For this course it is recommended to use VS Code.</p>
+
+            <p>Sitepoint<br>
+            We are going to use material from SitePoint.com. Purchase an access code on BYU-Idaho bookstore.</p>
+
+            <p>Node/NPM<br>
+            Install LTS (Long Term Support) version of Node.</p>
+
+            <p>Git and GitHub<br>
+            We have to install Git and have an account at GitHub</p>
+
+            <p>Microsoft Teams<br>
+            A Microsoft Team has been setup for this course. WDD330.x semester.</p>
+
+            <p>Form a Team<br>
+            Much of the work in the course will be done in a team. 2-3 of our classmates.</p>
+
+            <p>Trello<br>
+            Create a free account at Trello. Is for manage the team project.</p>
+
+            <h3>GIT and GitHub</h3>
+            <p>Version control is a method of recording changes made to a file or a set of files. Allow us to come back to a specific version.<br>
+                Two types of control version: centralized and distributed (git).<br>
+                To configure:
+                </p>
+            <ul>
+                <li>git config --global user.name “user name”</li>
+                <li>git config --global user.email “email”</li>
+            </ul>
+            <p>3 Files stages in Git: Modified (working directory), Staged (staging area) and Committed (repository).<br>
+                Git commands to navigate through the 3 stages: git add, git commit, git push.<br>
+                The basic workflow is: 
+                </p>
+            <ol>
+                <li>Modified files in the working directory</li>
+                <li>add files to the staging area</li>
+                <li>commit files to the repository</li>
+            </ol>
+            <p>Commands:</p>
+            <ul>
+                <li>git remote add origin http://repository address</li>
+                <li>git remote -v</li>
+                <li>git status </li>
+                <li>git add . or git add filename</li>
+                <li>git commit -m “message for the commit”</li>
+                <li>git push origin master ==== to push the changes to the repository</li>
+            </ul>
+            <br>
+            <p>Commands for the log:</p>
+            <ul>
+                <li>git log</li>
+                <li>git log --pretty:oneline ==== to see the commit history in one lines</li>
+                <li>git log --author = “usuario” ==== to see the log for that user</li>
+                <li>git show “number of merge” ==== shows the merge with its changes.</li>
+                <li>git diff “branchName” “branchName”==== shows the difference.</li>
+            </ul>
+            <br>
+            <p>Commands to undo mistakes:</p>
+            <ul>
+                <li>git reset Head “filename” === is going to taken off for the stage </li>
+                <li>git reset --soft Head~1 ==== undo something that you commit.</li>
+                <li>git revert HEAD ==== undo a push.</li>
+            </ul>
+            <br>
+            <p>Commands when there is changes in the repository:</p>
+            <ul>
+                <li>git fetch ==== will fetch changes for the remote repo.</li>
+                <li>git merge origin/master ==== performed a fast forward.</li>
+            </ul>
+            <p>And easy way to fetch and merge remote chenges into local repo: git pull origin master</p>
+            <br><br>
+            <p>Branches</p>
+            <p>The main branch is called Master.<br>
+                Git branches are independent with its own unique changes.<br>
+                Head refers to the tip of the branch you are on.<br>
+                When create a branch it has all the code that is in master (is a copy of master)<br>
+                Commands:
+                </p>
+            <ul>
+                <li>git branch -a ==== shows all the current branches.</li>
+                <li>git branch “branchName” ==== creates a branch</li>
+                <li>git checkout “branchName” ==== change of branch</li>
+                <li>git checkout -b “branchName” ==== creates and go to that branch</li>
+                <li>git branch -m “branchName” “newBranchName” ==== change branch Name</li>
+                <li>git branch -d “branchName” ==== delete a branch</li>
+                <li>git push origin “branchName” ==== push changes to a specific branch</li>
+            </ul>
+            <br>
+            <p>Mergin Brances</p>
+            <p> Fast forward merge: if there is no development into the master branch (no diverged) Then the git Head will point to the latest commit on the branch after the merge.<br><br>
+                No fast-forward merge: No development has taken place on the master branch. Instead of pointing to the last commit on the branch you are working on, a separate commit is represented to the merge.<br><br>
+                Commands:
+            </p>
+            <ul>
+                <li>git merge --no-f “branchName” ==== no fast-forward merge.</li>
+                <li>git merge “branchName” ==== fast-forward merge.</li>
+                <li>git branch -d “branchName ==== delete a branch.</li>
+                <li>git push origin --delete “branchName” ==== delete a branch on the repository.</li>
+            </ul>
+            <br>
+            <p>To clone a repository from github to our local working directory: git clone “http://repository address”</p>
+
+
+
         </main>
         <footer>
             <p>&copy; <span id="currentYear"></span> | Diego A. Gomez | Virginia | BYU | Online Learning</p>
