@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes WDD 330</title>
+    <link href="/WDD_330-Notes/style/normalize.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/small.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/medium.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-content">
+        <header class="myHeader lesson">
+            <div class="box"> 
+                 <a class="linkHome" href="/WDD_330-Notes/index.html" target="_self">Home</a>
+            </div>
+            <div class="mytitle">
+                <h1>Week 03 - Lesson 06</h1> 
+            </div>
+        </header>
+        <main>
+            <h3 class="note-titulo">Forms</h3>
+            <h3>Ch8 Forms</h3>
+            <p>Made up for “form” elements that contains input fields, select menus and buttons.</p>
+            <p>Traditionally the information was submitted and send it to the server then was processed using PHP and Ruby. Is common now to process the information in the front-end before it is sent to the server using JavaScript.</p>
+            <h3>Accessing Form Elements</h3>
+            <p>Dom has a useful property that returns HTML collection of all the forms in the document in order they appear. This property is: document.forms<br>
+                We have to use a index notation because a collection is return:<br>
+                const form = document.form[0];<br>
+                An equivalent:<br>
+                const form = document.getElementByTagName(‘form’)[0]
+                </p>
+            <p>We can use the name attribute to identify a form:<br>
+                const form = document.forms.search;<br><br>
+                
+                The form object has the element property that returns an HTML collection of all elements contain in the form.<br>
+                const [input,button] = form.elements;<br>
+                </p>
+            <h3>Form Properties and Methods</h3>
+            <ul><li>form.submit() method will submit the form automatically.</li>
+                <li> form.reset() method will reset all the form controls.</li>
+                    <li>form.action property can be used to set the action attribute of a form, it’s sent to a different URL.</li>
+            </ul>
+            <h3>Form Events</h3>
+            <p>Focus event example: </p>
+            <code>
+            <pre>
+                const input = form.elements.searchInput;
+                input.addEventListener('focus', () => alert('focused'), false); 
+            </pre>
+            </code>
+            <p>Blur event (when the user move the focus away from the form element<br>
+                Example: input.addEventListener('blur', () => alert('blurred'), false);
+                </p>
+            <p>Change event (when the user moves the focus away from the move after changing it)<br>
+                Example:  input.addEventListener('change', () => alert('changed'), false);
+            </p>
+
+            <p>Submitting a Form<br>Example:</p>
+            <code>
+                <pre>
+                const form = document.forms['search'];
+                form.addEventListener ('submit', search, false);
+                function search() {
+                alert(' Form Submitted');
+                }
+                </pre>
+            </code>
+            <p>Retrieving and Changing value from a Form<br>
+                Text input elements objects have a ‘value’ property.<br>
+                Example:
+                </p>
+            <code>
+                <pre>
+                function search(event) {
+                alert(`You Searched for: ${input.value}`);
+                event.preventDefault();
+                }
+                    
+                </pre>
+            </code>
+            <p>Example 2:</p>
+            <p>input.value='Search here';</p>
+            <br>
+            <h3>Input Fields</h3>
+            <p>Default type for input field is text. The type=’text’ attribute isn’t require. The initial value can be set with the attribute value.
+                <br>
+                Example: 
+                </p>
+            <code>
+                <pre>
+                &ltlabel&gt for='donation-amount'&gtEnter amount to donate: 
+                &ltinput type='text' id ='donation-amount' name='donationAmount' value='10'&gt
+                &lt/label&gt
+                </pre>
+            </code>
+            <h3>Password input field</h3>
+            <p>Is used to enter passwords or secret information.<p>
+            
+            <p>To process the information we do: hero.realName = form.realName.value;</p>
+            
+            
+            <h3>Checkbox Input fields</h3>
+            <p>They are created using type=”checkbox”. Used for select different options. Checkd(true), unchecked(false). In checkbox all the name attributes has the same value.
+            
+            We can then iterate over this collection using a for loop to see if each checkbox was checked.
+            Checkbox object has a property called checked, and it is a Boolean property.<br><br>
+            
+            Example:</p>
+            <code>
+                <pre>
+                hero.powers = [];
+                for (let i=0; i < form.powers.length; i++) {
+                        if (form.powers[i].checked) {
+                            hero.powers.push(form.powers[i].value);
+                        }
+                }
+                    
+                </pre>
+            </code>
+             
+            <h3>Radio Button Input Fields</h3>
+            <p>They are created using type=”radio”. They check if an option is true. Only one option can be selected.
+            It has all the same name attribute to group the together, only one can be checked. Each button hast a checked property that return a Boolean.<br>
+            <br>
+            Example:</p>
+            <code>
+                <pre>
+                &ltp&gtWhat type of hero are you?&lt/p&gt
+                &ltlabel for='hero'&gtHero:
+                &ltinput type='radio' name='category' value='Hero' id='hero'&gt
+                &lt/label&gt
+                &ltlabel for='villain'&gtVillain:
+                    &ltinput type='radio' name='category' value='Villain' id='villain'&gt
+                &lt/label&gt
+                &ltlabel for='anti-hero'&gtAnti-Hero:
+                    &ltinput type='radio' name='category' value='Antihero' id='anti-hero'&gt
+                &lt/label&gt
+                </pre>
+            </code>
+            <p>We can access the collection using the property of the same name: form.category:<br>
+
+                Its possible to change the “checked” property to true: form.type[2].checked = true;
+                
+                </p>
+            <h3>Hidden Input Fields</h3>
+            <p>Created with type=”hidden”. These are not display by the browser. They are often used to send information that the user has already provided.</p>
+
+            <h3>File Input Fields</h3>
+            <p>Created with type=”file”. Used to upload files.</p>
+            
+            <h3>Oher input Types</h3>
+            <p>Number, tel, color are other input in HTML5. Number have the attribute of ‘min’ and ‘max’.</p>
+            
+            
+            <h3>Select Drop-Down List</h3>
+            <p>Is used to select one or more options from a list. The ‘multiple’ attribute is require if we want that more than one option is to be selected.<br>
+            Example:</p> 
+            
+                <code><pre>
+                &ltlabel for='City'&gtBase of Operations:
+                &ltselect name='city' id='city'&gt
+                    &ltoption value='' selected&gtChoose a City&lt/option&gt
+                    &ltoption value='Metropolis'&gtMetropolis&lt/option&gt
+                    &ltoption value='Gotham City'&gtGotham City&lt/option&gt
+                    &ltoption value='Keystone City'&gtKeystone City&lt/option&gt
+                    &ltoption value='Coast City'&gtCoast City&lt/option&gt
+                    &ltoption value='Star City'&gtStar City&lt/option&gt
+                &lt/select&gt
+                &lt/label&gt
+                </pre>
+                </code>
+              <p>To access the list: form.city; (if only one item was selected)<br>
+                Each selection has a value: hero.city = form.city.value;</p>
+                
+                <h3>Text Areas</h3>
+                <p>Created with the &ltextarea&gt element. Used to enter a long piece of text. We use the name attribute to access the value.</p>
+                <p>Example: </p>
+                <code><pre>
+                    &ltlabel for='origin'&gtOrigin Story:
+                    &ltextarea id='origin' name='origin' rows='20' cols='60'&lt/textarea&gt
+                    &lt/label&gt
+            
+                </pre></code>
+                <p>To access the text we used: hero.origin = form.origin.value;</p>
+
+                <h3>Buttons</h3>
+                <p>Default type is ‘submit’. Another type is ‘reset’ witch will reset all the form fields.</p>
+
+                <p>Example:</p>
+	                <p>&ltbutton type='reset'&gtReset&lt/button&gt</p>
+                <p>Other type is ‘button’. This one doesn’t need to be inside the form element. It creates a clickable button that can have a event listener.</p>
+
+                <h3>Form Validation.</h3>
+                    
+                <p>Is the process of checking whether the user has entered the information correctly.
+                 <br>Example:</p>
+                 <ul>
+                       <li> A require field is completed</li>
+                        <li>An email address is valid</li>
+                        <li>A number is entered when a number is required</li>
+                            <li>A password is at least a minimum number of characters</li>
+                    </ul>
+                <p>We can add the required attribute to the element in the form: 
+                  <br>  Example:</p>
+                 <code>
+                     <pre>
+                &ltinput type='text' id='heroName' name='heroName' autofocus <br>
+                placeholder='Your Super Hero Name' maxlength=32 required&gt 
+                     </pre>
+                 </code>  
+                <p> An example of validating a name field and we don’t want that the name begins with X:
+                    <br>
+                Example:</p>
+                <code>
+                <pre>
+                form.addEventListener('submit',validate,false);
+                function validate(event) {
+                    const firstLetter = form.heroName.value[0];
+                        if (firstLetter.toUpperCase() === 'X') {
+                            event.preventDefault();
+                            alert('Your name is not allowed to start with X!');
+                        }
+                }
+                </pre>
+                </code>
+                <h3>Disabling the Submit Button</h3>
+                <p>We can do this when there is an error on the form. If the submit button is disabled no action is taken.
+
+                  <br><br>  Example: &ltbutton type='submit' id='submit' disabled&grSubmit&lt/button&gt
+                    </p>
+                 <p>Then we use the disable property:
+                    <br>Example:
+                    </p>  
+                    <code>
+                        <pre>
+                function disableSubmit(event) {
+                    if(event.target.value === ''){
+                        document.getElementById('submit').disabled = true;
+                        } else {
+                        document.getElementById('submit').disabled = false;
+                        }
+                    }
+                    </pre>
+                    </code>
+            <h3>VIDEO using FormData Objects Effectively</h3>   
+
+            <p>To reference all the form we can use de Id that we use in the form element.
+                    We always need to have the name attribute in our form elements. The only way to the inputs come through.</p>
+            <p>When we use JavaScript and we want that JavaScritp to handle our forms and we don’t want the page automatically reload we need to add: preventDefault()</p>
+                    
+            <p>The FormData objects contains all the form (inputs, buttons, textarea) This is What you send as the body when you submit data to the server.</p>
+                    
+            <p>Example:</p>
+            <code>
+            <pre>
+                let myForm = ev.target;
+                let fd = new FormData(myForm);    
+            </pre>
+            </code>
+            <h3>Client-side Form Validaton</h3>
+
+           <p>Before submitting data to the server, we need to ensure all require form are filled out.
+            Client-side validation is an initial check. Client-side  should not be considered an exhaustive security measure.</p>
+            <p>Example of form validation: A field is require, Enter phone number in format xxx-xxxx, enter valid email address.</p>
+            <p>If information is correctly formatted the data is going to be submitted to the server and (usually) saved in a database, if the information is not correct it will give to the user an error.
+
+            </p>           
+            <p>There is to types of client-side validation: Built in form validation (uses HTML validation feature, doesn’t require much JavaScript. And JavaScript validation using JavaScript (completely customizable)
+
+            </p>           
+             <h3>Using Built-in form validation</h3>   
+            <p>Require: Specifies when a form field have to be filled before submitting<br>
+               Minlenght and maxlenght: Specifies the minimum and maximum length of a text<br>
+                Min and max: Specifies the minimum and maximum value of numerical input.<br>
+                Pattern: Specifies regular expressions.<br>
+                </p>   
+            <p>
+                If the data follows all the rules specifies it consider valid, if not it is considered invalid<br>
+                Valid: The element matches the: valid CSS pseudo class.<br>
+                Invalid: The element matches the: invalid CSS pseudo class.<br>
+            </p>
+            <p>Example:</p>
+            <code>
+            <pre>
+            &ltform&gt
+                &ltlabel for="choose"&gtWould you prefer a banana or cherry? (required)&lt/label&gt
+                &ltinput id="choose" name="i-like" required /&gt
+                &ltbutton&gtSubmit&lt/button&gt
+            &lt/form&gt
+            
+            CSS:
+                input:invalid {
+                border: 2px dashed red;
+                }
+
+                input:invalid:required {
+                background-image: linear-gradient(to right, pink, lightgreen);
+                }
+
+                input:valid {
+                border: 2px solid black;
+                }
+     
+            </pre>
+            </code>      
+            <h3>Validating again a regular expression</h3>
+            <p>For this we use the pattern attribute, which expects a Regular expression.
+                Regexps are complex.<br> 
+                Example: &ltinput id="choose" name="i-like" 
+                required pattern="[Bb]anana|[Cc]herry" /&gt
+                </p>
+            <p>Now you just can put banana or cherry.</p>
+            <h3>Constraining the length of your entries</h3>  
+            <p>You can do this in an imput or textarea element by using minlength and maxlength attribute.</p>
+       
+            <p>For the inputs with type number we can use de min and max attributres.
+             <br>Example:&ltinput type="number" id="number" name="amount" value="1" min="1" max="10"  /&gt
+                </p>
+            <h3>Validating Forms using JavaScript</h3>
+            <p>Forms supports Constraint Validation API. Sets of methods and properties available for forms elements DOM interfaces:</p>
+                <ul>
+                    <li>HTMLButtonElement (represents a &ltbutton&gt element)</li>
+                    <li>HTMLFieldSetElement (represents a &ltfieldset&gt element)</li>
+                    <li>HTMLInputElement (represents an &ltinput&gt element)</li>
+                    <li>HTMLOutputElement (represents an &ltoutput&gt element)</li>
+                    <li>HTMLSelectElement (represents a &ltselect&gt element)</li>
+                    <li>HTMLTextAreaElement (represents a &lttextarea&gt element)</li>
+                </ul>
+            <p>This are Some properties of the Constraint validation API for the above elements:</p>
+
+            <p>validationMessage </p>
+            <p>validity (returns a ValidityState). It has several properties like: patterMismatch, tooLong, tooShort, rangeOverflow, rangeUnderflow, typeMismatch, valid, valueMissing.</p>
+ 
+            <p>willValidate: returns true if the element will be validate when the form is submitted.</p>
+
+             <p>Methods:</p>
+
+            <p>checkValidity(): return true if the elements value has no validity problems</p>
+            <p>reportValidity(): Reports invalid field using events.</p>
+            <p>setCustomValidity(message): Adds a custom error message to the element.</p>
+
+            <p>The automated messages have two drawbacks:</p>
+            <p>First, there is no standar way to change their look with CSS. Second, you can have a page in one language but an error message displayed in another language.</p>
+        </main>
+        <footer>
+            <p>&copy; <span id="currentYear"></span> | Diego A. Gomez | Virginia | BYU | Online Learning</p>
+        </footer>
+    </div>
+</body>
+</html>    
