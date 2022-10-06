@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes WDD 330</title>
+    <link href="/WDD_330-Notes/style/normalize.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/small.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/medium.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Roboto:wght@400&display=swap" rel="stylesheet">
+ </head>   
+<body>
+    <div class="main-content">
+        <header class="myHeader lesson">
+            <div class="box"> 
+                 <a class="linkHome" href="/WDD_330-Notes/index.html" target="_self">Home</a>
+            </div>
+            <div class="mytitle">
+                <h1>Week 04 - Lesson 07</h1> 
+                 
+            </div>
+        </header>
+        <main>
+            <h3 class="note-titulo">CSS3 Transforms and Transitions</h3>
+            <h3>Transform</h3>
+            <div class="flex-box1">
+                <div class="translate-div">    
+                    <div id="box1"><button id="btn">Translate</button></div><br>
+                    
+                </div>  
+                <div class="scale-div">
+                    <div id="box2"><button id="btn2">scale</button></div><br>
+                    
+                </div>
+            </div>
+            <form>
+                <input type="button" value="Go back!" onclick="history.go(0)">
+            </form>
+            <br><br>
+            <div class="flex-box1">
+                <div class="rotate-div">    
+                    <div id="box3"><button id="btn3">Rotate</button></div><br>
+                    
+                </div>  
+                <div class="scale-div">
+                    <div id="box4"><button id="btn4">skew</button></div><br>
+                    
+                </div>
+            </div>
+            <br>
+            <h3>Transitions</h3>
+            <p>Transitions allow the values of CSS properties to change over time</p>
+            <p>Steps to create transition:</p>
+            <ul>
+                <li>Declare the original state of the element in the default Style declaration</li>
+                <li>Declare the final state of your transitioned element(for example: hover)</li>
+                <li>Include the transition function in your default style.</li>
+            </ul>
+            <div class="flex-box1">
+                <div class="rotate-div">    
+                    <div id="box5">Hover</div><br>
+                    
+                </div>  
+                <div class="scale-div">
+                    <div id="box6">Hover</div><br>
+                    
+                </div>
+            </div>
+            <br>
+            <h3>Animations</h3>
+            <p>A keyframe is a snapshot that defines a starting or end point of any smooth transition 
+                CSS animations allow us to add any number of keyframes in between, to guide our animation in more complex ways
+            </p>
+            <p>To animate an element you need first to create a named animation, then attach it to an element.
+                To create the animation use the <strong>@keyframes</strong>. Use WebKit follow by a name of your choosing.
+            </p>
+            <div class="flex-box1">
+            <div>
+                <p>Example: </p>
+            <code>
+                <pre>
+                @-webkit-keyframes myAnimation { 
+                    /* put animation keyframes here */
+                }
+                @keyframes myAnimation { 
+                    /* put animation keyframes here */
+                }   
+                </pre>
+            </code>
+            </div>
+            <div id="box7"><button id="btn7">Animation</button>
+
+            </div>
+        </div>
+        </main>
+        <footer>
+            <p>&copy; <span id="currentYear"></span> | Diego A. Gomez | Virginia | BYU | Online Learning</p>
+        </footer>
+    </div>
+    <script src="/WDD_330-Notes/script/transform.js"></script>
+ 
+</body>
+</html>    

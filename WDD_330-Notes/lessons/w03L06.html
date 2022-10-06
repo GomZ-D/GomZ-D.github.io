@@ -48,14 +48,14 @@
             <code>
             <pre>
                 const input = form.elements.searchInput;
-                input.addEventListener('focus', () => alert('focused'), false); 
+                input.addEventListener('focus', () =&gt; alert('focused'), false); 
             </pre>
             </code>
             <p>Blur event (when the user move the focus away from the form element<br>
-                Example: input.addEventListener('blur', () => alert('blurred'), false);
+                Example: input.addEventListener('blur', () =&gt; alert('blurred'), false);
                 </p>
             <p>Change event (when the user moves the focus away from the move after changing it)<br>
-                Example:  input.addEventListener('change', () => alert('changed'), false);
+                Example:  input.addEventListener('change', () =&gt; alert('changed'), false);
             </p>
 
             <p>Submitting a Form<br>Example:</p>
@@ -112,7 +112,7 @@
             <code>
                 <pre>
                 hero.powers = [];
-                for (let i=0; i < form.powers.length; i++) {
+                for (let i=0; i &lt; form.powers.length; i++) {
                         if (form.powers[i].checked) {
                             hero.powers.push(form.powers[i].value);
                         }
@@ -249,7 +249,7 @@
 
             <p>To reference all the form we can use de Id that we use in the form element.
                     We always need to have the name attribute in our form elements. The only way to the inputs come through.</p>
-            <p>When we use JavaScript and we want that JavaScritp to handle our forms and we don’t want the page automatically reload we need to add: preventDefault()</p>
+            <p>When we use JavaScript and we want that JavaScritp to handle our forms and we dont want the page automatically reload we need to add: preventDefault()</p>
                     
             <p>The FormData objects contains all the form (inputs, buttons, textarea) This is What you send as the body when you submit data to the server.</p>
                     

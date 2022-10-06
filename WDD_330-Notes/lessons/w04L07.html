@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes WDD 330</title>
+    <link href="/WDD_330-Notes/style/normalize.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/small.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/medium.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-content">
+        <header class="myHeader lesson">
+            <div class="box"> 
+                 <a class="linkHome" href="/WDD_330-Notes/index.html" target="_self">Home</a>
+            </div>
+            <div class="mytitle">
+                <h1 class="mainTitle">Week 04 - Lesson 07</h1> 
+                <a class="l07link" href="w04L07B.html"><h2>Transform and Transitions</h2></a>
+            </div>
+        </header>
+        <main>
+            <h3 class="note-titulo">Further Functions</h3>
+            <p>Are first-Class object. That means that they can be used the same way as every other value. (accept other functions as parameters and can be return by other functions)</p>
+            <h3>Function Properties and Methods</h3>
+            <p>They can have properties and methods for themselves. For example they can use the property <strong>length</strong></p>
+            <p>Example:</p>
+            <code>
+                <pre>
+                function square(x) {
+                return x*x;
+                }  
+                square.length
+                Output: 1.  
+                </pre>
+            </code>
+            <p>I returns how many parameters the function has.</p>
+            <h3>Call and Apply Methods</h3>
+            <p>The <strong>call()</strong> method is to set the value of this inside the function.</p>
+            <p>Example:</p>
+            <code>
+                <pre>
+                function sayHello(greeting='Hello'){
+                   return `${ greeting }, my name is ${ this.name }`;
+                }
+                    
+                sayHello.call(clark, 'How do you do');
+                Output: 'How do you do, my name is Clark'
+                    
+                sayHello.call(bruce);
+                Output: 'Hello, my name is Bruce'
+                </pre>
+            </code>
+            <p>The <strong>apply()</strong> method works the same way, except arguments are pass as an Array.</p>
+            <h3>Immediately Invoked Function Expressions</h3>
+            <p><abbr title="Immediately Invoked Function Expressions" >IIFE</abbr> is an anonymous function
+            that is invoke as soon as it's define by placing parentheses at the end of the function.</p>
+            <p>Example: </p>
+            <code>
+                <pre>
+                (function(){
+                    const temp = 'World';
+                    console.log(`Hello ${temp}`);
+                    })();
+
+                Output= 'Hello World'
+                </pre>
+            </code>
+            <h3>Temporary Variables</h3>
+            <p>Placing a temporary variable inside a IIFE will ensure it's only available while the IIFE is invoked, then it will disappear.
+                This process require the use of a temporary variable, called <strong>temp</strong>       </p>
+            <code>
+                <pre>
+                let a = 1;
+                let b = 2;
+
+                (()=&gt;{
+                const temp = a;
+                a = b;
+                b = temp;
+                })();
+
+                a;
+                Output= 2
+
+                b;
+                Output= 1
+
+                console.log(temp);
+                Output= Error: "temp is not defined"
+                </pre>
+            </code>    
+
+            <p>IIFE can be used to set up any initialization code there'll no need for again. (Note: in ES6 this can be accomplish by jus plicing the 
+                code inside a block, this is because variables have block scope</p>
+            <h3>Safe use of Strict Mode</h3>
+            <p>Safe mode at the begining of a file will enforced strict mode on all the JavaScript file.
+                To avoid this, the recommended way is to place all your code inside a IIFE.
+            </p>
+            <p>IIFE can be used to enclose a block of code inside its own private scope so it doesnt interfere with any toher part of the program.</p>
+            <h3>Functions that Define and Rewrite Themselves</h3>
+            <p>A function can define itself and even redefine itself. This is done by assigning an anonymous function to a variable 
+                that has the same name as the function
+            </p>
+            <code>
+                <pre>
+                function party(){
+                    console.log('Wow this is amazing!');
+                    party = function(){
+                       console.log('Been there, got the T-Shirt');
+                    }
+                }    
+                </pre>
+            </code>
+            <p>Every time the function is called after the first time, it will log the message 'Been there, got the T-Shirt'.</p>
+            <h3>Recursive Functions</h3>
+            <p>A Recursive function is one that invokes itself until a certain condition is met.</p>
+            <code>
+                <pre>
+                function factorial(n) {
+                    if (n === 0) {
+                        return 1;
+                        } else {
+                            return n * factorial(n - 1);
+                        }
+                    }
+                </pre>
+            </code>
+            <h3>Callbacks</h3>
+            <p>They are function passed to other functions as arguments and then invoked inside the function they are passed to.</p>
+            <p>They can be used to facilitate event-driven asynchronous programming. Instead of waiting for an event to accur, a callback can be created
+                that's invoked when the event happend. By using callback, we ensure that waiting for these tasks doesnt hold up the execution
+                of other parts of the program.
+            </p>
+            <code>
+                <pre>
+                function wait(message, callback, seconds){
+                    setTimeout(callback,seconds * 1000);
+                    console.log(message);
+                }
+                function selfDestruct(){
+                    console.log('BOOOOM!');
+                }
+                wait('This tape will self-destruct in five seconds ... ', selfDestruct, 5);
+                console.log('Hmmm, should I accept this mission or not ... ?');
+
+                Output= 'This tape will self-destruct in five seconds ... '
+                Output= 'Hmmm, should I accept this mission or not ... ? '
+                Output= 'BOOOOM!'
+                </pre>
+            </code>
+            <p>The increase use of asynchronous programming in JavaScript had made that more and more callback are being used.
+                This can result in messy and confusing code. This is when more than one callback is used in the same function. This is called
+                <strong>Callbacks Hell.</strong>
+            </p>
+            <p><strong>Promises</strong> dont do anything that cant already be achieved using callbacks, but the avoid the convoluted code 
+            that can result from using multiple callbacks.</p>
+            <p>When a promise is created, it calls an asynchronous operation and is then said to be <strong>pending</strong>, and it remains in that state while the operation
+            is taking place. It is said that the promise is <i>unsettled</i>. When is completed the promise is said to have been <i>settled</i>.
+            A settled promise can result in two different outcomes: Resolved or Rejected.
+            </p>
+            <p>A promise is created usign a constructor function. This takes a function called an <strong>executor</strong> as an argument.
+                The executor initializes the promise and start the asynchronous operation. Also accepts two arguments: the resolve() and the reject().
+            </p>
+            <code>
+                <pre>
+                const promise = new Promise( (resolve, reject) =&gt; {
+                    // initialization code goes here
+                    if (success) {
+                        resolve(value);
+                    } else {
+                        reject(error);
+                    }
+                });   
+                </pre>
+            </code>
+            <p>Once a promise has been settled, the <strong>then()</strong> method can be used to deal with the outcome. This method accept two arguments, resolve and reject.</p>
+            <p>If each function that performs an asynchronous operation return a promise, we can chain the <strong>then()</strong> methods. Each promise will only begin once the previous promise has been settled.</p>
+            <p>Example: </p>
+            <code>
+                <pre>
+                login(userName)
+                .then(user =&gt; getPlayerInfo(user.id))
+                .then(info =&gt; loadGame(info))
+                .catch( throw error)   
+                </pre>
+            </code>
+            <h3>Async Functions</h3>
+            <p>These functions are preceded by the <strong>async</strong> keyword. This allow you to write asynchronous code as if it was synchronous.
+            This is accomplish by using the <strong>await</strong> operator before an asynchronous function.</p>
+            <p>Example: </p>
+            <code>
+                <pre>
+                async function loadGame(userName) {
+
+                    try {
+                        const user = await login(userName);
+                        const info = await getPlayerInfo (user.id);
+                        // load the game using the returned info
+                    }
+                    
+                    catch (error){
+                        throw error;
+                    }
+                }   
+                </pre>
+            </code>
+            <p>Also, functions can return other functions.</p>
+            <p>Example: </p>
+            <code>
+                <pre>
+                function returnHello() {
+                    console.log('returnHello() called');
+                    return function() {
+                        console.log('Hello World!');
+                    }
+                }
+                </pre>
+            </code>
+            <h3>Closures</h3>
+            <p>Closure is a reference to a variable what was created inside the scope of another function, but is then kept alive and used in another part of the program</p>
+            <code>
+                <pre>
+                function outer() {
+                    const outside = 'Outside!';
+                    function inner() {
+                        const inside = 'Inside!';
+                        console.log(outside);
+                        console.log(inside);
+                    }
+                    console.log(outside);
+                    inner();
+                }   
+                </pre>
+            </code>
+            <p>The outer function only has access to the variable outside. The inner function has access to the variable inside 
+                but also the variable outside (just from within the outer function)
+            </p>
+            <p>A closure is formed when the inner function is returned by the outer function, maintaining access to any variable declared 
+                inside the enclosing function.
+            </p>
+            <h3>Generators</h3>
+            <p>These are used to produce iterators that maintain the state of a value. To define a generator function 
+                we use the asterisk symbol <strong>(*)</strong> after the function declaration
+            </p> 
+            <p>Example: funtion* exampleGenerator() {}</p>
+            <p>It returns a Generator object that can be used to create an iterator that implements a next() method. that returns a value 
+                every time the next() method is called.
+            </p>
+            <h3>Functional Programming</h3>
+            <p>A key aspect of functional Programming is its use of pure functions. Pure function is:</p>
+            
+            <ul>
+                <li>Only depends on the values provided as arguments.</li>
+                <li>Doesn't change any values of data elsewhere in the program. Only makes non-destructing data 
+                    transformations and return new values </li>
+                <li>A pure function always return the same result</li>
+            </ul>
+            <p>To follow these rules: </p>
+            <ul>
+                <li>At least one argument.</li>
+                <li>A return value.</li>
+            </ul>
+
+            <p>Example of non-destructive data transformation: </p>
+            <code>
+                <pre>
+                function reverse(string) {
+                    return string.split('').reverse().join('');
+                }       
+                </pre>
+            </code>
+            <p>Using const to declare varibables will help to avoid destructive data transformations.</p>
+            <p>The functions performs a series of operations without changing the state of any data.</p>
+            <h3>Higher-Order Functions</h3>
+            <p>Are function that accept another functions as an argument, or return another function as a result, or both</p>
+            <p>Closures are used in higher-order functions.</p>
+            <p>Example: </p>
+            <code>
+                <pre>
+                function multiplier(x){
+                    return function(y){
+                        return x*y;
+                    }
+                }    
+                </pre>
+            </code>
+            <h3>Currying</h3>
+            <p>Is a process that involves the partial application of functions. A function is said to be curried when not all 
+                arguments have been supplied to the function, returns another function that retains the argument already provided. A 
+                final result is only returned when all the arguments have been provided
+            </p>
+            <p>Currying relies on higher-order functions thatt are able to return partially apoplied functions.</p>
+            <p>Curring allows you to turn a single function into a series of functions instead.</p>
+        </main>
+        <footer>
+            <p>&copy; <span id="currentYear"></span> | Diego A. Gomez | Virginia | BYU | Online Learning</p>
+        </footer>
+    </div>
+</body>
+</html>    
