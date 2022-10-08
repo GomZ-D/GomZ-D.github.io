@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes WDD 330</title>
+    <link href="/WDD_330-Notes/style/normalize.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/small.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/medium.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-content">
+        <header class="myHeader lesson">
+            <div class="box"> 
+                 <a class="linkHome" href="/WDD_330-Notes/index.html" target="_self">Home</a>
+            </div>
+            <div class="mytitle">
+                <h1 class="mainTitle">Week 04 - Lesson 08</h1> 
+                
+            </div>
+        </header>
+        <main>
+            <h3 class="note-titulo">JSON Web Token (JWT)</h3>
+            <p>Defines a compact and selfcontained way for securely transmitting information between parties as a JSON object</p>
+            <p>JWTs can be signed using a secret (HMAC) or public/private key pair usgin RSA</p>
+            <ul>
+                <li><strong>Compact:</strong> It can be sent through an URL, POST parameter, or inside HTTP header.</li>
+                <li><strong>Self-contained:</strong>The payload contains all the require information about the user.(this avoid to query the DB more than once)</li>
+            </ul>
+            <p>Where JSON Web token are useful:</p>
+            <ul>
+                <li><strong>Authentication: </strong>once the user is logged in, eache subsequent request will include the JWT, allowing the user to access routes, serveces, and resources.</li>
+                <li><strong>Information Exchange: </strong>JWT are a good way of securely transmitting information. For example: using a public/private key pair.</li>
+            </ul>
+            <p>JWT consist of three parts separeted by dots: </p>
+            <ul>
+                <li>Header</li>
+                <li>Payload</li>
+                <li>Signature</li>
+            </ul>
+            <h4>Header</h4>
+            <p>Consist in 2 parts: the type of the token and the hashing algorithm such as HMAC, SHA256 OR RSA</p>
+            <code>
+                <pre>
+                {
+                    'alg': 'HS256',
+                    'typ': 'JWT'
+                }  
+                </pre>
+            </code>
+            <p>This JSON is <strong>Base64Url</strong> encoded to form the first part of the JWT</p>
+            <h4>Payload</h4>
+            <p>Contains the claims. Claims are statements about an entity(for example: the user). There are 3 types 
+                of claims:
+            </p>
+            <p><strong>Reserved claims: </strong>iss(issure), exp(expriation time), sub(subject), aud(audience) and others.</p>
+            <p><strong>Public claims: </strong>To avoid collisions you should be defined in the IANA JSON Web Token Registry 
+            or be defined as a URI.</p>
+            <p><strong>Private claims: </strong>custom claims created to share information between parties.</p>
+            <p>Example: </p>
+            <code>
+                <pre>
+                {
+                    'sub': '1234567890',
+                    'name': 'John Doe',
+                    'admin': true
+                }    
+                </pre>
+            </code>
+            <h4>Signature</h4>
+            <p>To create a signature part you have to take the encoded header, the encoded payload, a secret, the algorithm in the header,and sign it</p>
+            <p>Example of HMAC SHA256: </p>
+            <code>
+                <pre>
+                HMACSHA256(
+                  base64UrlEncode(header) + '.' +
+                  base64UrlEncode(payload),
+                  secret)   
+                </pre>
+            </code>
+
+            <p>Eht output is 3 Base64 strings separated bydots. Those can be passed in HTML and
+                HTTP.
+            </p>
+            <p>Example of a header and payload encoded and sign with a secret: </p>
+            <code>
+                <pre>
+                    <span class="color-A">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span><span class="color-B">.ey
+                    JzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImRpZ
+                    WdvIGdvbWV6IiwiaWF0IjoxNTE2MjM5MDIyfQ.</span><span class="color-C">9
+                    yvjXduZoiOyIZiEw8OARdxlXUWjpM9nuEbmX_2N
+                    ONk</span>   
+                </pre>
+            </code>
+            <code>
+                <pre>
+                    <strong>Header</strong>
+                    <span class="color-A">{
+                        "alg": "HS256",
+                        "typ": "JWT"
+                    }</span>
+                </pre>
+            </code>
+            <code>
+                <pre>
+                    <strong>Payload</strong>
+                    <span class="color-B">{
+                        "sub": "1234567890",
+                        "name": "diego gomez",
+                        "iat": 1516239022
+                    }</span>
+                </pre>
+            </code>
+            <code>
+                <pre>
+                    <strong>Verify Signature</strong>
+                    <span class="color-C">{
+                        base64UrlEncode(header) + "." +
+                        base64UrlEncode(payload),
+                        your-256-bit-secret
+                    }</span>
+                </pre>
+            </code>
+
+            <p>In atthenticatons a JSON web Token will be returned. Tokens are credentials and are to prevent security issues.</p>
+            <p>Whenever a user wants to access, it should send the JWT. Its a stateless authentications, so it never saved in the server memory.</p>
+            <br>
+            <h3 class="note-titulo">Develop, Debug, Learn</h3>
+            <p>In the past the debugging tool in the past was the alert window.</p>
+            <p>A logical order: LEARN, DEVELOP, DEBUG</p>
+            <p>Its not about us, its about the end-users</p>
+            <p>Our job is to build things to allow people to do things</p>
+            <p>This is not about us. This is about our <strong>tech legacy</strong></p>
+            <p>"We have stop playing with the platform itself, we stop creating css hack to work around with issues with the browser,
+                we stop thinking about JavaScript solutions" ... but we add another module. </p> 
+            <p>Dont be a "full stackoverflow developer" (go to stackoverflow, find the solution and copy/paste into your code) </p>
+            <p>A problem is that we have to much choice.</p>
+            <p>Content switching is mentally exhausting</p>
+            <p>Rethinking Tooling: prevent us from doing things wrong instead of patching up what we created.</p>
+            <p>We learn, we create and debug.</p>
+            <p>Learning should be part of the debugging and developing.</p>
+            <p>We have the editor, we have the Developers tools in the Browser and we have the documentation(MDN/CanIUse...)</p>
+            <p>This is flexible and people can lear while their are developing</p>
+            <p>Learn things while you are doing it</p>
+        </main>
+        <footer>
+            <p>&copy; <span id="currentYear"></span> | Diego A. Gomez | Virginia | BYU | Online Learning</p>
+        </footer>
+    </div>
+</body>
+</html>    
