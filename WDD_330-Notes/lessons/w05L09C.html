@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workers-Factorizor</title>
+    <link href="/WDD_330-Notes/style/normalize.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/small.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/medium.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+     <div class="main-content">
+        <header class="myHeader lesson">
+            <div class="box"> 
+                 <a class="linkHome" href="w05L09.html" target="_self">GO BACK</a>
+            </div>
+            <div class="mytitle">
+                <h1 class="mainTitle">Canvas, SVG, and Drag and Drop</h1> 
+            </div>
+        </header>
+        <main>
+            <h3>Canvas</h3>
+            <p>We can draw anything, all through JavaScript. This can improve the performance of our website</p>
+            <p>We can draw shapes and lines, arcs and text, gradients and patterns.</p>
+            <p>We can manipulate pixels in images and even videos.</p>
+            <p>Example: </p>
+            <code>
+                <pre>
+                &lt;canvas id="myCanvas" class="myCanvas"width="200" height="200"&gt;
+                    Sorry! Your browser doesn’t support Canvas.
+                &lt;/canvas&gt;       
+                </pre>
+            </code>
+           
+            <p>The drawing of the canvas happends in JavaScript</p>
+            <p>For drawing in 3D there is a new API called WebGL.</p>
+            <p>First we have to saturate the brush with paint. We do this with the properties <strong>strokeStyle</strong> or <strong>fillStyle</strong></p>
+            <p>Both takes one of three values: String representing the color, a <strong>CanvasGradient</strong> or <strong>CanvasPattern</strong> object.</p>
+            <p>Second to draw a rectangle we call the methods <strong>fillRect</strong> and <strong>strokeRect</strong>, both take X and Y coordinates.</p>
+            <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+                Sorry! Your browser doesn’t support Canvas.
+            </canvas>
+            <p>Instead of colors as our <strong>fillStyle</strong> we can use <strong>canvasGradient</strong> and <strong>canvasPattern</strong></p>
+            <p>CanvasPattern takes two arguments: the images to create the patter, and how the image should be repeted</p>
+            <p>The repeat value is the same as CSS: repeat, repeat-x, repeat-y and no-repeat</p>
+            <p>We can also create a <strong>canvasGradient</strong> that has two methods: <strong>createLinearGradient()</strong> or <strong>createRadialGradient()</strong></p>
+            <canvas id="myCanvas2" class="myCanvas" width="200" height="200">
+                Sorry! Your browser doesn’t support Canvas.
+            </canvas>
+            <p>You can draw circles and other shapes. To do that we have to begin with <strong>beginPath()</strong> method.</p>
+            <p>Then we use the <strong>arc</strong> method = arc(x, y, radius, startAngle, endAngle, anticlockwise)</p>
+            <canvas id="myCanvas3" class="myCanvas" width="200" height="200">
+                Sorry! Your browser doesn’t support Canvas.
+            </canvas>
+            <br>
+            <p>We can also draw images onto the canvas element. </p>
+            
+            <canvas width="200" height="200" id="demo6" class="myCanvas2">
+                 Sorry! Your browser doesn't support Canvas.
+            </canvas>
+
+            <img src="soccer.png" id="myImageElem" alt="html5img">
+            <br>
+            <p>We can use the <strong>getImageData</strong> method to manipulate the pixel of an image.</p>
+            <p>This method contains 3 properties: width, height and data.</p>
+            <p>Data contains information about the pixel's R,G,B and A values.</p>
+            <code>
+                <pre>
+                function manipulateImage() {
+                    var canvas = document.getElementById("demo7");
+                    var context = canvas.getContext("2d");
+                    var image = document.getElementById("secondImage");
+                    context.drawImage(image, 68, 68);
+                    
+                    var imageData = context.getImageData(0, 0, 200, 200);
+                        
+                    var red, green, blue, greyscale;
+                        
+                    for (var i = 0; i &lg; imageData.data.length; i += 4) {
+                    var red = imageData.data[i];
+                    var green = imageData.data[i + 1];
+                    var blue = imageData.data[i + 2];
+                            
+                    var grayscale = red * 0.3 + green * 0.59 + blue * 0.11;
+                            
+                    imageData.data[i] = grayscale;
+                    imageData.data[i + 1] = grayscale;
+                    imageData.data[i + 2] = grayscale;
+                    } 
+                    context.putImageData(imageData, 0, 0);
+                }
+            </pre>
+        </code>
+
+            <p>We can display text on the canvas. We'll do that using the <strong>fillText</strong> method</p>
+            <p>We can use others methods like <strong>textAlign</strong> and the property <strong>font</strong></p>
+
+        <h3>SVG</h3>
+        <p>Stands for Scalable Vector Graphics, and allows you to describe vector graphics using XML.</p>
+        <p>Vector images preserve their quality even as you blow them up or shrink them down</p>
+        <p>We can use SVG to do many of the same things we do with canvas.</p>
+        <p>Drawing a circle: </p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+            <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+             
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+            <desc>Drawing a rectangle</desc>
+            <rect x="10" y="10" width="100" height="100"  
+            fill="blue" stroke="red" stroke-width="3"  />  
+    
+        </svg>
+
+        <p>It's not easy, it can become very complicated code for some comples shapes.</p>
+        <p>The <strong>Raphael</strong> is an open-source JavaScript library that makes drawing and animating with SVG much easier.</p>
+        <br>
+        <p>Canvas versus SVG</p>
+        <p>Canvas allows pixel manipulation</p>
+        <p>In canvas you are unable to simply add to what's already there. Every time your finisth
+            drawing a shape, the vanvas no longer has access to that shape.(immediate mode)
+        </p>    
+        <p>Canvas is mucha faster than SVG</p>
+        <p>SVG is accessible via the DOM (retained mode)</p>
+        <p>SVG has a more set of tools to help you work with it, such as Raphael library</p>
+        <h3>Drag and Drop</h3>
+        <p>This API allows us to specify that certain elements are draggable, and then specify  what should happen when these draggable 
+            elements are dragged over or dropped onto other elements on the page.
+        </p>
+        <p>Two major functionalily: draggin files from your computer into a web page or dragging elements into other elements.</p>
+        <p>Steps for drag and drop:</p>
+        <ul>
+            <li>Set the <strong>draggable</strong> attribute on any html elements you'd like to be draggable.</li>
+            <li>Add an event listener for the <strong>dragstart</strong> event on any draggable html element.</li>
+            <li>Add an event listener for the <strong>dragover</strong> and <strong>drop</strong> event on any element that you want to have accept dropped.</li>
+        </ul>
+    </main>
+
+        <footer>
+            <p>&copy; <span id="currentYear"></span> | Diego A. Gomez | Virginia | BYU | Online Learning</p>
+        </footer>
+        <script src="/WDD_330-Notes/script/canvas2.js"></script>
+    </div>
+</body>
+</html>  

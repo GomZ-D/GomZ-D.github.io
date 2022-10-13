@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workers-Factorizor</title>
+    <link href="/WDD_330-Notes/style/normalize.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/small.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/medium.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+     <div class="main-content">
+        <header class="myHeader lesson">
+            <div class="box"> 
+                 <a class="linkHome" href="w05L09.html" target="_self">GO BACK</a>
+            </div>
+            <div class="mytitle">
+                <h1 class="mainTitle">Example of Worker</h1> 
+                
+            </div>
+        
+        </header>
+    
+        <button id="rainbow">Change Color</button>
+        <form>
+            <label for="number">Enter a Number to Factorize:
+                <input id="number" type="number" name="number" min="1" value="20">
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="output"></div>
+        <p>Without the worker if we enter a sizable number, it going to take longer to process the answer
+            and the browser will display a warning and you can't change the colors. The whole program greezes until 
+            the operation is complete.
+        </p>
+        <p>Using workers the factors will be calculated even if its a big number, it will be done in the background and send a message that
+            he is working on it while the colors of the background can be change.
+        </p>
+    <script src="/WDD_330-Notes/script/facto.js"></script>
+    <!-- <script src="/script/facto.js"></script> -->
+    <footer>
+        <p>&copy; <span id="currentYear"></span> | Diego A. Gomez | Virginia | BYU | Online Learning</p>
+    </footer>
+    </div>
+</body>
+</html>

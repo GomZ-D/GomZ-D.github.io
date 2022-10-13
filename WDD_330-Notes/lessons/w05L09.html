@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes WDD 330</title>
+    <link href="/WDD_330-Notes/style/normalize.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/small.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/medium.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-content">
+        <header class="myHeader lesson">
+            <div class="box"> 
+                 <a class="linkHome" href="/WDD_330-Notes/index.html" target="_self">Home</a>
+            </div>
+            <div class="mytitle">
+                <h1 class="mainTitle">Week 05 - Lesson 09</h1> 
+                
+            </div>
+        </header>
+        <main>
+            <h3 class="note-titulo">HTML5</h3>
+            <h3>Data-attribute</h3>
+            <p>It's use for embedding data in a web page, usign attributes that are ignored by the browser</p>
+            <p>Their purpose is to be used by JavaScript</p>
+            <p>The names of these attributes can be decided by the programmer, but must follow this format:</p>
+            <ul>
+                <li>Start with data-</li>
+                <li>Only lowercase letter, number, dots, colons or underscore</li>
+                <li>Include an optional string value.</li>
+            </ul>
+            <p>Example: </p>
+            <code>
+                <pre>
+                    data-power = 'flight superspeed'
+                    data-user = 'DIEGO'
+                </pre>
+            </code>
+
+            <p>This informations on the attributes can be used to identify particular elements.</p>
+            <p>Each element has a <strong>dataset</strong> property to access the data-</p>
+            <code>
+                <pre>
+                &lt;div id='hero' data-powers='flight superSpeed'&gt;
+                    Superman
+                &lt;/div&gt;
+
+
+                const superman = document.getElementById('hero');
+                const powers = superman.dataset.powers;
+                Output= 'flight superSpeed'
+                </pre>
+            </code>
+            <h3>HTML5 API</h3>
+            <p>Help to gain access to hardware, such asi cameras, batteries, geolocation and graphic card.</p>
+            <h4>Web Storage</h4>
+            <p>The W.S. provides key-value store on the client's computer that is similar to using cookies but has fewer
+                restrictions, more storage capacity, and is generally easier to use.
+            </p>
+            <p>The information store is not shared with the server on every request</p>
+            <p>The information is available on the windows who's domain is the same.</p>
+            <p>Storage capacity have a limit set al 5GB per domain</p>
+            <p>Example: </p>
+            <code>
+                <pre>
+                localStorage.setItem('name', 'Walter White');
+                
+                To Get the data back:
+                localStorage.getItem('name'); 
+                Output= "Walter White"
+
+                </pre>
+            </code> 
+            <p>Also: </p>
+            <code>
+                <pre>
+                localStorage.name = 'Heisenberg'; 
+
+                console.log(localStorage.name); 
+                Output "Heisenberg";   
+                </pre>
+            </code>
+
+            <p>To Remove items: </p>
+            <code>
+                <pre>
+                localStorage.removeItem('name');   
+                OR
+                delete localStorage.name;
+                
+                To Complete remove everything:
+                localStorage.clear();
+                </pre>
+            </code>
+
+            <p>We can use a JSONs files: </p>
+            <code>
+                <pre>
+                localStorage.setItem('superman', JSON.stringify(hero);  
+                and
+                superman = JSON.parse(localStorage.getItem('superman'));
+                </pre>
+            </code>
+            <br>
+            <h4>GeoLocation</h4>
+            <p>Is used to obtain the geographical position of the device. User exact location.</p>
+            <p>You can link the user to nearby places, measure the speed which the user is moving.</p>
+            <p>Its a property of the navigator object, and it has a method called <strong>getCurrentPosition()</strong></p>
+            <code>
+                <pre>
+                navigator.geolocation.getCurrentPosition(youAreHere);   
+                </pre>
+            </code>
+            <p>Thet will return a <strong>position</strong> object called youAreHere.
+            The position object has a <strong>coords</strong> property with a <strong>Latitud</strong> and <strong>Longitud</strong> property</p>
+            <code>
+                <pre>
+                function youAreHere(position) {
+                    console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`); 
+                 }   
+                </pre>
+            </code>   
+            <p>It has other properties: position.speed, position.altitude, position.heading and position.timestamp.</p> 
+            <h4>Web Workers</h4>
+            <p>JavaScript is sigle-=threaded lenguage, Web workers allow processes to be run in the background, adding support for concurrency.</p>    
+            <p>We use the <strong>worker()</strong> contructor: </p>
+            <code>
+                <pre>
+                const worker = new Worker('task.js');  
+                </pre>
+            </code>  
+            <p>The task.js file will be downloaded asynchronously.</p>
+            <p>The <strong>postMessage()</strong> method can be used to send a message and start the worker working</p>
+            <p>When the worker complete its task, it can be stopped using <strong>terminate()</strong> method or using <strong>close()</strong></p>
+            <button id ="btn4" onclick="location.href='w05L09B.html' " type="button">
+                Example of Workers form sitePoint
+            </button>
+            <br>
+            <h4>Websockets</h4>
+            <p>Is a new protocol that allos two-way communication with a server, known as push messaging.
+                This means that a connection is kept open and responses are 'pushed' to the client as soon as they are received
+            </p>
+            <h4>Multimedia</h4>
+            <p>HTML5 introduce <strong>&lt;audio&gt;</strong> and <strong>&lt;video&gt;</strong> tags to insert audio and video.</p>
+            <p>Example: </p>
+            <code>
+                <pre>
+                &lt;audio src='/song.mp3' controls&gt;
+                    Your browser does not support the audio element.
+                &lt;/audio&gt;
+                
+                &lt;video src='http://movie.mp4' controls&gt;
+                    Your browser does not support the video element.
+                &lt;/video&gt;
+                </pre>
+            </code>
+            <p>The controls attribute will display the browser's native controls, such as play and volumen control.</p>
+            <code>
+                <pre>
+                const video = document.getElementsByTagName('video')[0];   
+                </pre>
+            </code>
+            <p>Audio y video have a properties and methods: video.play(), video.pause(), video.volume = 0.9 </p>
+            <p>video.muted = true; , video.currentTime +=10, video.playbackRate = 8, video.loop = true; , video.duration;</p>
+            <br>
+            <h4>Other APIs</h4>
+            <p>The list of APIs is constantly growing like accessing a device's camera, uploading files, accessing battery status.etc</p>
+            <p><strong>Drawing with Canvas</strong></p>
+            <p>Canvas element was introduce to allow graphics to be drawn onto a web page in reali time using JavaScript</p>
+            <p>Is a rectangular element. It has coordinate system that starts at(0,0) in top-left corner</p>
+            <p>The canvas element is used specifying a <strong>height</strong> and <strong>width</strong></p>
+            <code>
+                <pre>
+                    &lt;canvas id='canvas' width='400' height='400'&gt;Sorry, but your browser does not support the canvas element&lg;/canvas&gt;   
+                </pre>
+            </code>
+            <canvas id="canvas" width="300" height="300">Sorry, but your browser does not support the canvas element</canvas>
+            <button id ="btn5" onclick="location.href='w05L09C.html' " type="button">
+                More on Canvas, SVG and Drag and Drop
+            </button>
+        </main>
+        <footer>
+            <p>&copy; <span id="currentYear"></span> | Diego A. Gomez | Virginia | BYU | Online Learning</p>
+        </footer>
+        <!-- <script src="/WDD_330-Notes/script/canvas.js"></script> -->
+        <script src="/WDD_330-Notes/script/canvas.js"></script>
+    </div>
+</body>
+</html>    

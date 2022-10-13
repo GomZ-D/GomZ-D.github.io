@@ -185,3 +185,31 @@ main {
   .color-C {
       color: blue;
   }
+
+  /*-----link lesson 09-------*/
+ #btn4, #btn5 {
+     background-color: #9f0000;
+     color: white;
+     padding: 5px;
+     display: block;
+     margin: 5px auto;
+     
+ }
+
+ #btn4:hover, #btn5:hover {
+     background-color: #560b0b;
+ }
+
+ .myCanvas {
+     border: 3px dotted black;
+ }
+
+ .myCanvas2 {
+    border: dotted 2px black;
+    margin: 0 20px;   
+ }
+
+ #myImageElem {
+     display: inline-block;
+     width: 50px;
+ }
