@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes WDD 330</title>
+    <link href="/WDD_330-Notes/style/normalize.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/small.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/medium.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-content">
+        <header class="myHeader lesson">
+            <div class="box"> 
+                 <a class="linkHome" href="/WDD_330-Notes/index.html" target="_self">Home</a>
+            </div>
+            <div class="mytitle">
+                <h1 class="mainTitle">Week 05 - Lesson 09</h1> 
+            </div>
+        </header>
+        <main>
+            <h3 class="note-titulo">Introduction to Function, Execution Context and the Call Stack</h3>
+            <p>The moment we start running our code, JavaScrip creates the <strong>Global Execution Context</strong></p>
+            <p>JavaScript execut the code line by line (parses)</p>
+            <p>Parsing and execution the code line by line is called thread of execution. 
+            </p>
+            <p>Code example:</p>
+            <code>
+                <pre>
+                  1  const num =3;
+                  2  function multiplyBy2 (inputNumber){
+                  3      const result = inputNumber * 2;
+                  4      return result;
+                  5  }
+                  6  const name = "will";
+                </pre>
+            </code>
+            <p>JavaScript is going to read line 1 (store variable), then line 2 and store the funciton in memory and jump to line 6.</p>
+            <p>If we don't invoke the function it will never read what is inside of it.(</p>
+            <p>This code is going to be available anywhere inside of our application, because this is the global excecution context.</p>
+            <p>JavaScript is going to go from top to bottom of our code, that means it is <strong>Synchronous</strong>. And because is excecution one thing at a time we said
+                that JavaScrip is <strong>single Threaded</strong></p>
+            <p>If we call the function: </p>
+            <code>
+                <pre>
+                    const output = multiplyBy2(4);
+                    const newOutput = multiplyBy2(10)
+                </pre>
+            </code>
+            <p>When we execute a function we create a new execution context = <strong>local excecution context </strong></p>
+            <p>In the Global execution context the function variable is going to receive the value of undefine.(output)</p>
+            <p>In the local execution context the first thing that is going to store in memory is going to be the parameter inputNumber with its argument that is number 4</p>
+            <p>After reading line by line the function is going to return the value of 8 to the global exectution context, and change the value of undefine to 8. </p>
+            <p>The way that JavaScrip has to track where is in the code or where is in the execution context is the <strong>Call Stack</strong>. Always at the bottom
+                of the call stack is going to be our global excecution context</p>
+            <p>Then start to push on the function and when it finish with the function it pop off from the call stack. (first in last out)</p>
+            <br>
+            <h3>Callbacks and Higher Order Functions</h3>
+            <p>We have to create functions that permit us to reuse it as many times as possible.</p>
+            <p>We don't want to determine, or we don't want to be specific on until we end up running the function</p>
+            <p>Every time we invoke a new function JavaScritp will create a new execution context </p>
+            <p>Functions in JavaScript are first class objects. They can be treated like any other object</p>
+            <ul>
+                <li>Assigned to variables and properties of other objects.</li>
+                <li>Passed as arguments into functions.</li>
+                <li>Returned as value from functions.</li>
+            </ul>
+            <p>Functions have one property that objects don't have, and that is that functions can be invoke.</p>
+            <p>Higher order functions are the one that can handle other functions being passed in and returned out.</p>
+            <p>The function that is pass in is the CallBack Function.</p>
+            <p>Both allow us to run asynchronous code. </p>
+            <p>Example: </p>
+            <code>
+                <pre>
+                 function copyArrayandManipulate(array, instruccion) {
+                     let output = [];
+                     for (let i = 0; i &lt; array.length; i++) {
+                         output.push(instruction(array[i]))
+                     }
+                     return output;
+                 }
+                 function multiplyBy2 (input) {
+                     return input *;
+                 }    
+                 let result = copyArrayandManipulate([1,2,3], multiplyby2)
+                </pre>
+            </code>
+        </main>
+
+        <footer>
+            <p>&copy; <span id="currentYear"></span> | Diego A. Gomez | Virginia | BYU | Online Learning</p>
+        </footer>
+        <!-- <script src="/WDD_330-Notes/script/canvas.js"></script> -->
+         
+    </div>
+</body>
+</html>  
