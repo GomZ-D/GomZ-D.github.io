@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes WDD 330</title>
+    <link href="/WDD_330-Notes/style/normalize.css" rel="stylesheet">
+    <link href="/WDD_330-Notes/style/small.css" rel="stylesheet">
+    <!-- <link href="/style/small.css" rel="stylesheet"> -->
+    <link href="/WDD_330-Notes/style/medium.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-content">
+        <header class="myHeader lesson">
+            <div class="box"> 
+                 <a class="linkHome" href="/WDD_330-Notes/index.html" target="_self">Home</a>
+            </div>
+            <div class="mytitle">
+                <h1>FINAL PROJECT!!</h1> 
+            </div>
+        </header>
+        <main>
+            <h3>About the WebSite</h3>
+            <p>We created a website to adopt dogs. The page is simple and easy to navigate.
+                 When accessing the page, we will find the home 
+                 page in which it will show us the photo of 4 dogs which we can choose to adopt. After we choose one, it will take us to a second page in which it will show us a card with data about the dog we chose. If we finally decide to adopt it, it will take us to a form that we must fill out to adopt the dog.</p>
+            <p>In the navigation menu we have other options such as food and donate. Food will take us to a page where we can put an ingredient and it will give us food recipes. Donate will take us to a page that is a form where we can fill out to donate a dog.</p>
+            <h3>Description of the app</h3>
+             <p>We create JSON that contains the data of the dogs to be adopted. When we enter the home page it will take the data and put it in the photos. For that we create a file called data-source that will be in charge of taking the JSON and copying it in the LocalSotorage. Then we take the data from localStorage and enter it in each of the photos of the dogs that will be adopted.</p>   
+              <p>It will then save the user's selection and take that value from localStorage to place on the cards. The information that users enter in the form will also be saved in the LocalStorage.</p>  
+                <p>We use API so that when someone searches for an ingredient, they can find food recipes with that ingredient. We use API from Edaman.</p>
+                <p>The page style has shadows, transition, hover, transform use of flex and grid, before and animations.</p>
+                <h3>Design and problems</h3>
+                <p>I worked on the layout of the page and creating the style. I had problems so that when the photos rotate, the data of the dogs appears. But I was able to fix it since it was a problem in the CSS. I also worked with making the pet-detail both the JavaScript and its design and it was a challenge especially the part where when a user chooses a dog, the card that is shown on the next page is with the data of that dog.
+                     My teammates helped me to solve this. The home page loops through an array of json. Creating the JavaScript was a challenge and I learned a lot from it.</p>
+            
+                <h3>Links</h3>
+                <span>Site:</span>
+                <a href="https://wdd330team.github.io/" target="_blank">Adopt a dog!</a>
+                <br>
+                <span>GitHub repository: </span>
+                <a href="https://github.com/yamiriv1311/wdd330_team" target="_blank">Team Work!</a>
+            
+            </main>
+
+
+        <footer>
+            <p>&copy; <span id="currentYear"></span> | Diego A. Gomez | Virginia | BYU | Online Learning</p>
+           
+       </footer>
+    </div>
+</body>
+</html>
